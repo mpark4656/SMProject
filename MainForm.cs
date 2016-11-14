@@ -38,7 +38,10 @@ namespace FormsApplication
             InitializeComponent();
         }
 
-        // Send the username field content to client's clipboard
+        /**
+         *  User clicks Copy button next to username text field.
+         *  Send the username field content to client's clipboard
+         * */
         private void copyUsernameButton_Click(object sender, EventArgs e)
         {
             if( 0 < usernameField.Text.Length )
