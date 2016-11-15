@@ -189,16 +189,17 @@ namespace FormsApplication
         // Attempt UNC(Universal Naming Convention) Connection
         private void LaunchCommandUnc()
         {
-            ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\RUNDLL32" , "SHELL32.DLL,SHHelpShortcuts_RunDLL Connect");
-            
-            if( machineField.Text.Length > 0 )
+            try
             {
-                Clipboard.SetText("\\\\" + machineField.Text + "\\c$");
-                MessageBox.Show("\"\\\\" + machineField.Text + "\\c$\" has been sent to clipboard",
-                             "Attention", MessageBoxButtons.OK);
-            }
+                ProcessStartInfo cmd = new ProcessStartInfo("\\\\" + machineField.Text + "\\c$");
 
-            Process exeProcess = Process.Start(cmd);
+                Process exeProcess = Process.Start(cmd);
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                DialogResult dialogResult = MessageBox.Show("Unable to connect to \\\\" + machineField.Text + "\\c$.",
+                                                        "Error", MessageBoxButtons.OK);
+            }
         }
 
         // User clicks Copy Title Button
@@ -474,7 +475,11 @@ namespace FormsApplication
         // Validate the input that user enters in indexBox
         private void indexBox_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(indexBox.Text, "[^0-9]"))
+            if( indexBox.Text.Length < 1)
+            {
+                indexBox.Text = Convert.ToString(1);
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(indexBox.Text, "[^0-9]"))
             {
                 indexBox.Text = Convert.ToString(CurrentIndex);
             }

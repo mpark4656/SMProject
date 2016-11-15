@@ -1,0 +1,12 @@
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\bin\Debug\SMProject.exe.config
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\bin\Debug\SMProject.exe.manifest
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\bin\Debug\SMProject.application
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\bin\Debug\SMProject.exe
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\bin\Debug\SMProject.pdb
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SM Project.csprojResolveAssemblyReference.cache
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\FormsApplication.MainForm.resources
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SM Project.csproj.GenerateResource.Cache
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.exe.manifest
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.application
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.exe
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.pdb
