@@ -497,20 +497,14 @@ namespace FormsApplication
             }
         }
 
-        // Navigate to the entered index when user clicks Go button
-        private void goToButton_Click(object sender, EventArgs e)
-        {
-            save(CurrentIndex);
-            XML.SaveData(interactions);
-            load(Convert.ToInt32(indexBox.Text));
-        }
-
         // Navigate to the entered index when user hits Enter key while indexBox has focus
         private void indexBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                goToButton.PerformClick();
+                save(CurrentIndex);
+                XML.SaveData(interactions);
+                load(Convert.ToInt32(indexBox.Text));
             }
         }
 

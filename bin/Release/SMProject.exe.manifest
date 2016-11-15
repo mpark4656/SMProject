@@ -49,17 +49,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UE8ELJ9d4NQuKitednob1RnKGUwJtTTBkDvLSGQv2Yg=</dsig:DigestValue>
+        <dsig:DigestValue>Kn9DLd5he1tACBSFxOPcWIAwfM90EqpgVSSJ8einXa4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="SMProject.exe.config" size="189">
+  <file name="SMProject.exe.config" size="234">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6N7MliNbVJSIAIPrecIshMbZ7zEoKLr5SQvud4LDUOw=</dsig:DigestValue>
+      <dsig:DigestValue>A4gobLZ2w7GwlbOOcjKsVba2p7o4i4d+Yyynpjr/P64=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
