@@ -453,27 +453,28 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(19, 231);
+            this.titleLabel.Location = new System.Drawing.Point(19, 266);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(59, 20);
+            this.titleLabel.Size = new System.Drawing.Size(69, 20);
             this.titleLabel.TabIndex = 39;
-            this.titleLabel.Text = "Title";
+            this.titleLabel.Text = "Title:";
             // 
             // titleField
             // 
             this.titleField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleField.Location = new System.Drawing.Point(23, 262);
+            this.titleField.Location = new System.Drawing.Point(85, 262);
             this.titleField.Name = "titleField";
-            this.titleField.Size = new System.Drawing.Size(634, 27);
+            this.titleField.Size = new System.Drawing.Size(539, 27);
             this.titleField.TabIndex = 6;
             this.titleField.Enter += new System.EventHandler(this.titleField_Enter);
             // 
             // copyTitleButton
             // 
+            this.copyTitleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.copyTitleButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyTitleButton.Location = new System.Drawing.Point(81, 229);
+            this.copyTitleButton.Location = new System.Drawing.Point(635, 265);
             this.copyTitleButton.Name = "copyTitleButton";
             this.copyTitleButton.Size = new System.Drawing.Size(22, 22);
             this.copyTitleButton.TabIndex = 15;
