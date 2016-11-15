@@ -15,7 +15,7 @@ Stores ticket information and facilitates Enterprise ticket creation
 - MSRA: Opens attempts Microsoft Remote Assistance to specified machine with /offerRA parameter
 - RDC: Attempts Remote Desktop Connection to specified machine with /prompt parameter
 - UNC: Opens "Map a Network Drive" dialog window with UNC path sent to clipboard(Currently Bugged - Needs Work)
-- Add Checklist: Add a checklist to the Description
+- Add Checklist: Add a checklist to the Description (*** Has not been implemented yet***)
 - Window can be enlarged. However, minimum size is enforced to maintain proper positions of GUI components
 
 ## Future Improvement Ideas
