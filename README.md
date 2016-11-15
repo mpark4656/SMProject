@@ -9,13 +9,13 @@ Stores ticket information and facilitates Enterprise ticket creation
 - Larger font size than original SMPad to improve readability
 - Copy Field: Sends information in the individual text field to the clipboard with a click of the button
 - Copy All: Copies all information on the record in a special format
-- Format Telephone Number: When telephone number is entered with digits only (i.e. 1234567890), change it to (123)456-7890 with a click of the button - users no longer need to manually enter parentheses or dashes
-- Classification tag is automatically added to the Title given that the Classification text field has the correct classification specified - tag is automatically added when the Title field gains focus
-- Continuous Ping: Opens cmd.exe and pings specified machine name or IP Address with a click of the button - users can instantly find out whether the machine name can be resolved to an IP Address or whether the host has network connectivity
-- MSRA: Opens attempts Microsoft Remote Assistance to specified machine with /offerRA parameter
+- Format Telephone Number: When telephone number is entered with digits only (i.e. 1234567890), change it to (xxx)xxx-xxxx format with a click of the button - users no longer need to manually enter parentheses or dashes
+- Classification tag is automatically added to the Title given that the Classification text field has the correct classification entered - tag is automatically added when the Title field gains focus
+- Ping: Opens cmd.exe and continuously pings the specified machine name or IP Address with a click of the button - users can instantly find out whether the machine name can be resolved to an IP Address or whether the host has network connectivity
+- MSRA: Opens Microsoft Remote Assistance and attempts to connect to the specified machine with /offerRA parameter
 - RDC: Attempts Remote Desktop Connection to specified machine with /prompt parameter
-- UNC: Opens "Map a Network Drive" dialog window with UNC path sent to clipboard(Currently Bugged - Needs Work)
-- Add Checklist: Add a checklist to the Description (**Has not been implemented yet)
+- UNC: Opens "Map a Network Drive" dialog window with UNC path sent to clipboard(Currently Bugged)
+- Add Checklist: Add a checklist to the Description (**Has not been implemented yet**)
 - Window can be enlarged. However, minimum size is enforced to maintain proper positions of GUI components
 
 ## Future Improvement Ideas
