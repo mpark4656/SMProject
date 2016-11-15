@@ -60,7 +60,6 @@
             this.phoneField = new System.Windows.Forms.TextBox();
             this.assetField = new System.Windows.Forms.TextBox();
             this.machineField = new System.Windows.Forms.TextBox();
-            this.goToButton = new System.Windows.Forms.Button();
             this.recordNumberLabel = new System.Windows.Forms.Label();
             this.slashLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -87,10 +86,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(84, 11);
+            this.usernameLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.Location = new System.Drawing.Point(92, 10);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(99, 20);
+            this.usernameLabel.Size = new System.Drawing.Size(89, 17);
             this.usernameLabel.TabIndex = 33;
             this.usernameLabel.Text = "Username:";
             // 
@@ -98,82 +97,82 @@
             // 
             this.classificationBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.classificationBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.classificationBox.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classificationBox.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classificationBox.FormattingEnabled = true;
             this.classificationBox.Items.AddRange(new object[] {
             "Unclassified",
             "Unclassified NNPI",
             "Classified"});
-            this.classificationBox.Location = new System.Drawing.Point(184, 41);
+            this.classificationBox.Location = new System.Drawing.Point(181, 35);
             this.classificationBox.Name = "classificationBox";
-            this.classificationBox.Size = new System.Drawing.Size(200, 28);
+            this.classificationBox.Size = new System.Drawing.Size(200, 25);
             this.classificationBox.TabIndex = 1;
             // 
             // phoneLabel
             // 
             this.phoneLabel.AutoSize = true;
-            this.phoneLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneLabel.Location = new System.Drawing.Point(75, 112);
+            this.phoneLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneLabel.Location = new System.Drawing.Point(83, 95);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(109, 20);
+            this.phoneLabel.Size = new System.Drawing.Size(98, 17);
             this.phoneLabel.TabIndex = 36;
             this.phoneLabel.Text = "Telephone:";
             // 
             // interactionLabel
             // 
             this.interactionLabel.AutoSize = true;
-            this.interactionLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interactionLabel.Location = new System.Drawing.Point(54, 77);
+            this.interactionLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interactionLabel.Location = new System.Drawing.Point(65, 67);
             this.interactionLabel.Name = "interactionLabel";
-            this.interactionLabel.Size = new System.Drawing.Size(129, 20);
+            this.interactionLabel.Size = new System.Drawing.Size(116, 17);
             this.interactionLabel.TabIndex = 35;
             this.interactionLabel.Text = "Interaction:";
             // 
             // assetLabel
             // 
             this.assetLabel.AutoSize = true;
-            this.assetLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.assetLabel.Location = new System.Drawing.Point(114, 146);
+            this.assetLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assetLabel.Location = new System.Drawing.Point(119, 124);
             this.assetLabel.Name = "assetLabel";
-            this.assetLabel.Size = new System.Drawing.Size(69, 20);
+            this.assetLabel.Size = new System.Drawing.Size(62, 17);
             this.assetLabel.TabIndex = 37;
             this.assetLabel.Text = "Asset:";
             // 
             // machineLabel
             // 
             this.machineLabel.AutoSize = true;
-            this.machineLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machineLabel.Location = new System.Drawing.Point(95, 179);
+            this.machineLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machineLabel.Location = new System.Drawing.Point(101, 150);
             this.machineLabel.Name = "machineLabel";
-            this.machineLabel.Size = new System.Drawing.Size(89, 20);
+            this.machineLabel.Size = new System.Drawing.Size(80, 17);
             this.machineLabel.TabIndex = 38;
             this.machineLabel.Text = "Machine:";
             // 
             // classificationLabel
             // 
             this.classificationLabel.AutoSize = true;
-            this.classificationLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classificationLabel.Location = new System.Drawing.Point(25, 44);
+            this.classificationLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classificationLabel.Location = new System.Drawing.Point(38, 38);
             this.classificationLabel.Name = "classificationLabel";
-            this.classificationLabel.Size = new System.Drawing.Size(159, 20);
+            this.classificationLabel.Size = new System.Drawing.Size(143, 17);
             this.classificationLabel.TabIndex = 34;
             this.classificationLabel.Text = "Classification:";
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(19, 300);
+            this.descriptionLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(19, 268);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(119, 20);
+            this.descriptionLabel.Size = new System.Drawing.Size(107, 17);
             this.descriptionLabel.TabIndex = 40;
             this.descriptionLabel.Text = "Description";
             // 
             // copyAllButton
             // 
             this.copyAllButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.copyAllButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyAllButton.Location = new System.Drawing.Point(205, 842);
+            this.copyAllButton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyAllButton.Location = new System.Drawing.Point(203, 872);
             this.copyAllButton.Name = "copyAllButton";
             this.copyAllButton.Size = new System.Drawing.Size(259, 28);
             this.copyAllButton.TabIndex = 8;
@@ -186,7 +185,7 @@
             // copyUsernameButton
             // 
             this.copyUsernameButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyUsernameButton.Location = new System.Drawing.Point(388, 11);
+            this.copyUsernameButton.Location = new System.Drawing.Point(385, 7);
             this.copyUsernameButton.Name = "copyUsernameButton";
             this.copyUsernameButton.Size = new System.Drawing.Size(22, 22);
             this.copyUsernameButton.TabIndex = 9;
@@ -198,7 +197,7 @@
             // copyPhoneButton
             // 
             this.copyPhoneButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyPhoneButton.Location = new System.Drawing.Point(388, 113);
+            this.copyPhoneButton.Location = new System.Drawing.Point(385, 95);
             this.copyPhoneButton.Name = "copyPhoneButton";
             this.copyPhoneButton.Size = new System.Drawing.Size(22, 22);
             this.copyPhoneButton.TabIndex = 12;
@@ -210,7 +209,7 @@
             // copyInteractionButton
             // 
             this.copyInteractionButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyInteractionButton.Location = new System.Drawing.Point(388, 78);
+            this.copyInteractionButton.Location = new System.Drawing.Point(385, 67);
             this.copyInteractionButton.Name = "copyInteractionButton";
             this.copyInteractionButton.Size = new System.Drawing.Size(22, 22);
             this.copyInteractionButton.TabIndex = 11;
@@ -222,7 +221,7 @@
             // copyAssetButton
             // 
             this.copyAssetButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyAssetButton.Location = new System.Drawing.Point(388, 146);
+            this.copyAssetButton.Location = new System.Drawing.Point(385, 123);
             this.copyAssetButton.Name = "copyAssetButton";
             this.copyAssetButton.Size = new System.Drawing.Size(22, 22);
             this.copyAssetButton.TabIndex = 13;
@@ -234,7 +233,7 @@
             // copyMachineButton
             // 
             this.copyMachineButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyMachineButton.Location = new System.Drawing.Point(388, 179);
+            this.copyMachineButton.Location = new System.Drawing.Point(385, 151);
             this.copyMachineButton.Name = "copyMachineButton";
             this.copyMachineButton.Size = new System.Drawing.Size(22, 22);
             this.copyMachineButton.TabIndex = 14;
@@ -246,7 +245,7 @@
             // copyInfoButton
             // 
             this.copyInfoButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyInfoButton.Location = new System.Drawing.Point(143, 299);
+            this.copyInfoButton.Location = new System.Drawing.Point(142, 268);
             this.copyInfoButton.Name = "copyInfoButton";
             this.copyInfoButton.Size = new System.Drawing.Size(22, 22);
             this.copyInfoButton.TabIndex = 16;
@@ -258,7 +257,7 @@
             // pingButton
             // 
             this.pingButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pingButton.Location = new System.Drawing.Point(227, 209);
+            this.pingButton.Location = new System.Drawing.Point(225, 179);
             this.pingButton.Name = "pingButton";
             this.pingButton.Size = new System.Drawing.Size(22, 22);
             this.pingButton.TabIndex = 18;
@@ -269,9 +268,8 @@
             // 
             // newButton
             // 
-            this.newButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.newButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newButton.Location = new System.Drawing.Point(511, 96);
+            this.newButton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newButton.Location = new System.Drawing.Point(485, 64);
             this.newButton.Name = "newButton";
             this.newButton.Size = new System.Drawing.Size(146, 30);
             this.newButton.TabIndex = 26;
@@ -281,9 +279,8 @@
             // 
             // clearButton
             // 
-            this.clearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(511, 133);
+            this.clearButton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearButton.Location = new System.Drawing.Point(485, 101);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(146, 30);
             this.clearButton.TabIndex = 27;
@@ -296,19 +293,19 @@
             this.descriptionField.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionField.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionField.Location = new System.Drawing.Point(23, 327);
+            this.descriptionField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionField.Location = new System.Drawing.Point(23, 295);
             this.descriptionField.Multiline = true;
             this.descriptionField.Name = "descriptionField";
             this.descriptionField.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionField.Size = new System.Drawing.Size(634, 495);
+            this.descriptionField.Size = new System.Drawing.Size(634, 560);
             this.descriptionField.TabIndex = 7;
             this.descriptionField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descriptionField_KeyDown);
             // 
             // copyClassificationButton
             // 
             this.copyClassificationButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyClassificationButton.Location = new System.Drawing.Point(388, 43);
+            this.copyClassificationButton.Location = new System.Drawing.Point(385, 38);
             this.copyClassificationButton.Name = "copyClassificationButton";
             this.copyClassificationButton.Size = new System.Drawing.Size(22, 22);
             this.copyClassificationButton.TabIndex = 10;
@@ -319,9 +316,8 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(511, 171);
+            this.deleteButton.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.Location = new System.Drawing.Point(485, 139);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(146, 30);
             this.deleteButton.TabIndex = 28;
@@ -331,9 +327,8 @@
             // 
             // prevButton
             // 
-            this.prevButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.prevButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prevButton.Location = new System.Drawing.Point(511, 11);
+            this.prevButton.Location = new System.Drawing.Point(485, 11);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(35, 35);
             this.prevButton.TabIndex = 23;
@@ -343,9 +338,8 @@
             // 
             // nextButton
             // 
-            this.nextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nextButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextButton.Location = new System.Drawing.Point(622, 11);
+            this.nextButton.Location = new System.Drawing.Point(596, 11);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(35, 35);
             this.nextButton.TabIndex = 24;
@@ -355,9 +349,8 @@
             // 
             // totalCountLabel
             // 
-            this.totalCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.totalCountLabel.AutoSize = true;
-            this.totalCountLabel.Location = new System.Drawing.Point(597, 22);
+            this.totalCountLabel.Location = new System.Drawing.Point(571, 22);
             this.totalCountLabel.Name = "totalCountLabel";
             this.totalCountLabel.Size = new System.Drawing.Size(13, 13);
             this.totalCountLabel.TabIndex = 31;
@@ -365,8 +358,7 @@
             // 
             // indexBox
             // 
-            this.indexBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.indexBox.Location = new System.Drawing.Point(553, 19);
+            this.indexBox.Location = new System.Drawing.Point(527, 19);
             this.indexBox.MaxLength = 4;
             this.indexBox.Name = "indexBox";
             this.indexBox.Size = new System.Drawing.Size(30, 20);
@@ -377,57 +369,45 @@
             // 
             // usernameField
             // 
-            this.usernameField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameField.Location = new System.Drawing.Point(184, 8);
+            this.usernameField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameField.Location = new System.Drawing.Point(181, 7);
             this.usernameField.Name = "usernameField";
-            this.usernameField.Size = new System.Drawing.Size(200, 27);
+            this.usernameField.Size = new System.Drawing.Size(200, 24);
             this.usernameField.TabIndex = 0;
             // 
             // interactionField
             // 
             this.interactionField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.interactionField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interactionField.Location = new System.Drawing.Point(184, 75);
+            this.interactionField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interactionField.Location = new System.Drawing.Point(181, 64);
             this.interactionField.Name = "interactionField";
-            this.interactionField.Size = new System.Drawing.Size(200, 27);
+            this.interactionField.Size = new System.Drawing.Size(200, 24);
             this.interactionField.TabIndex = 2;
             // 
             // phoneField
             // 
-            this.phoneField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneField.Location = new System.Drawing.Point(184, 110);
+            this.phoneField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneField.Location = new System.Drawing.Point(181, 92);
             this.phoneField.Name = "phoneField";
-            this.phoneField.Size = new System.Drawing.Size(200, 27);
+            this.phoneField.Size = new System.Drawing.Size(200, 24);
             this.phoneField.TabIndex = 3;
             // 
             // assetField
             // 
-            this.assetField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.assetField.Location = new System.Drawing.Point(184, 144);
+            this.assetField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assetField.Location = new System.Drawing.Point(181, 121);
             this.assetField.Name = "assetField";
-            this.assetField.Size = new System.Drawing.Size(200, 27);
+            this.assetField.Size = new System.Drawing.Size(200, 24);
             this.assetField.TabIndex = 4;
             // 
             // machineField
             // 
             this.machineField.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.machineField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machineField.Location = new System.Drawing.Point(184, 176);
+            this.machineField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.machineField.Location = new System.Drawing.Point(181, 149);
             this.machineField.Name = "machineField";
-            this.machineField.Size = new System.Drawing.Size(200, 27);
+            this.machineField.Size = new System.Drawing.Size(200, 24);
             this.machineField.TabIndex = 5;
-            // 
-            // goToButton
-            // 
-            this.goToButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.goToButton.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goToButton.Location = new System.Drawing.Point(563, 46);
-            this.goToButton.Name = "goToButton";
-            this.goToButton.Size = new System.Drawing.Size(40, 26);
-            this.goToButton.TabIndex = 25;
-            this.goToButton.Text = "Go";
-            this.goToButton.UseVisualStyleBackColor = true;
-            this.goToButton.Click += new System.EventHandler(this.goToButton_Click);
             // 
             // recordNumberLabel
             // 
@@ -441,9 +421,8 @@
             // 
             // slashLabel
             // 
-            this.slashLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.slashLabel.AutoSize = true;
-            this.slashLabel.Location = new System.Drawing.Point(583, 22);
+            this.slashLabel.Location = new System.Drawing.Point(557, 22);
             this.slashLabel.Name = "slashLabel";
             this.slashLabel.Size = new System.Drawing.Size(12, 13);
             this.slashLabel.TabIndex = 30;
@@ -452,29 +431,28 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(19, 266);
+            this.titleLabel.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(20, 224);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(69, 20);
+            this.titleLabel.Size = new System.Drawing.Size(53, 17);
             this.titleLabel.TabIndex = 39;
-            this.titleLabel.Text = "Title:";
+            this.titleLabel.Text = "Title";
             // 
             // titleField
             // 
             this.titleField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleField.Font = new System.Drawing.Font("Courier New", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleField.Location = new System.Drawing.Point(85, 262);
+            this.titleField.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleField.Location = new System.Drawing.Point(109, 221);
             this.titleField.Name = "titleField";
-            this.titleField.Size = new System.Drawing.Size(539, 27);
+            this.titleField.Size = new System.Drawing.Size(539, 24);
             this.titleField.TabIndex = 6;
             this.titleField.Enter += new System.EventHandler(this.titleField_Enter);
             // 
             // copyTitleButton
             // 
-            this.copyTitleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.copyTitleButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyTitleButton.Location = new System.Drawing.Point(635, 265);
+            this.copyTitleButton.Location = new System.Drawing.Point(79, 221);
             this.copyTitleButton.Name = "copyTitleButton";
             this.copyTitleButton.Size = new System.Drawing.Size(22, 22);
             this.copyTitleButton.TabIndex = 15;
@@ -490,9 +468,8 @@
             // 
             // checklistButton
             // 
-            this.checklistButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checklistButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checklistButton.Location = new System.Drawing.Point(622, 298);
+            this.checklistButton.Location = new System.Drawing.Point(190, 268);
             this.checklistButton.Name = "checklistButton";
             this.checklistButton.Size = new System.Drawing.Size(35, 22);
             this.checklistButton.TabIndex = 22;
@@ -514,7 +491,7 @@
             // phoneFormatButton
             // 
             this.phoneFormatButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneFormatButton.Location = new System.Drawing.Point(418, 113);
+            this.phoneFormatButton.Location = new System.Drawing.Point(413, 95);
             this.phoneFormatButton.Name = "phoneFormatButton";
             this.phoneFormatButton.Size = new System.Drawing.Size(22, 22);
             this.phoneFormatButton.TabIndex = 17;
@@ -531,7 +508,7 @@
             // msraButton
             // 
             this.msraButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msraButton.Location = new System.Drawing.Point(257, 209);
+            this.msraButton.Location = new System.Drawing.Point(255, 179);
             this.msraButton.Name = "msraButton";
             this.msraButton.Size = new System.Drawing.Size(22, 22);
             this.msraButton.TabIndex = 19;
@@ -544,7 +521,7 @@
             // rdcButton
             // 
             this.rdcButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdcButton.Location = new System.Drawing.Point(287, 209);
+            this.rdcButton.Location = new System.Drawing.Point(285, 179);
             this.rdcButton.Name = "rdcButton";
             this.rdcButton.Size = new System.Drawing.Size(22, 22);
             this.rdcButton.TabIndex = 20;
@@ -556,7 +533,7 @@
             // uncButton
             // 
             this.uncButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uncButton.Location = new System.Drawing.Point(317, 209);
+            this.uncButton.Location = new System.Drawing.Point(315, 179);
             this.uncButton.Name = "uncButton";
             this.uncButton.Size = new System.Drawing.Size(22, 22);
             this.uncButton.TabIndex = 21;
@@ -591,7 +568,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(674, 882);
+            this.ClientSize = new System.Drawing.Size(674, 912);
             this.Controls.Add(this.uncButton);
             this.Controls.Add(this.rdcButton);
             this.Controls.Add(this.msraButton);
@@ -602,7 +579,6 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.slashLabel);
             this.Controls.Add(this.recordNumberLabel);
-            this.Controls.Add(this.goToButton);
             this.Controls.Add(this.machineField);
             this.Controls.Add(this.assetField);
             this.Controls.Add(this.phoneField);
@@ -634,7 +610,7 @@
             this.Controls.Add(this.classificationBox);
             this.Controls.Add(this.usernameLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(690, 920);
+            this.MinimumSize = new System.Drawing.Size(670, 100);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SMProject";
@@ -676,7 +652,6 @@
         private System.Windows.Forms.TextBox phoneField;
         private System.Windows.Forms.TextBox assetField;
         private System.Windows.Forms.TextBox machineField;
-        private System.Windows.Forms.Button goToButton;
         private System.Windows.Forms.Label recordNumberLabel;
         private System.Windows.Forms.Label slashLabel;
         private System.Windows.Forms.Label titleLabel;
