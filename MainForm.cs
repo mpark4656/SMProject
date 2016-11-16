@@ -161,29 +161,55 @@ namespace FormsApplication
         // Launch cmd.exe with PING command
         private void LaunchCommandPing()
         {
-            string arg = "c:\\Windows\\System32\\ping -t " + machineField.Text;
+            try
+            {
+                string arg = "c:\\Windows\\System32\\ping -t " + machineField.Text;
 
-            ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\cmd.exe", "/K " + arg );
+                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\cmd.exe", "/K " + arg);
 
-            Process exeProcess = Process.Start( cmd );
+                Process exeProcess = Process.Start(cmd);
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                DialogResult dialogResult = MessageBox.Show("A problem has occurred.",
+                                                           "Error", MessageBoxButtons.OK);
+            }
         }
 
         // Launch MSRA with /offerRA parameter
         private void LaunchCommandMsra()
         {
-            ProcessStartInfo cmd = new ProcessStartInfo( "c:\\Windows\\System32\\msra.exe" , 
-                                                         "/offerRA " + machineField.Text );
+            try
+            {
+                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\msra.exe",
+                                                         "/offerRA " + machineField.Text);
 
-            Process exeProcess = Process.Start(cmd);
+                Process exeProcess = Process.Start(cmd);
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                DialogResult dialogResult = MessageBox.Show("A problem has occurred.",
+                                                           "Error", MessageBoxButtons.OK);
+
+            }
         }
 
         // Launch RDC with /prompt parameter
         private void LaunchCommandRdc()
         {
-            ProcessStartInfo cmd = new ProcessStartInfo( "c:\\Windows\\System32\\mstsc.exe",
+            try
+            {
+                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\mstsc.exe",
                                                          "/prompt " + "/v " + machineField.Text);
 
-            Process exeProcess = Process.Start(cmd);
+                Process exeProcess = Process.Start(cmd);
+            }
+            catch(System.ComponentModel.Win32Exception)
+            {
+                DialogResult dialogResult = MessageBox.Show("A problem has occurred.",
+                                                        "Error", MessageBoxButtons.OK);
+            }
+            
         }
 
         // Attempt UNC(Universal Naming Convention) Connection
@@ -191,9 +217,17 @@ namespace FormsApplication
         {
             try
             {
-                ProcessStartInfo cmd = new ProcessStartInfo("\\\\" + machineField.Text + "\\c$");
+                string arg = "c:\\Windows\\System32\\net use z: \\\\" + machineField.Text + "\\c$";
+
+                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\cmd.exe" , "/C " + arg );
 
                 Process exeProcess = Process.Start(cmd);
+
+                if( exeProcess.WaitForExit(5000) )
+                {
+                    ProcessStartInfo fileExplorer = new ProcessStartInfo("Z:\\");
+                    Process explorer = Process.Start(fileExplorer);
+                }
             }
             catch (System.ComponentModel.Win32Exception)
             {
@@ -334,6 +368,10 @@ namespace FormsApplication
             {
                 titleField.Text = "SIPR - " + titleField.Text;
             }
+            else if(classificationBox.Text.Equals("Classified NNPI") && !titleField.Text.Contains("SIPR"))
+            {
+                titleField.Text = "SIPR - " + titleField.Text;
+            }
             else
             {
                 return;
@@ -394,7 +432,18 @@ namespace FormsApplication
             save(CurrentIndex);
             Record newRecord = new Record();
             interactions.Add(newRecord);
-            XML.SaveData(interactions);
+
+            try
+            {
+                XML.SaveData(interactions);
+            }
+            catch(System.NullReferenceException)
+            {
+                MessageBox.Show
+                    ("A problem has occurred while saving FormData.xml. Try removing the file and reopening this application.",
+                     "Error", MessageBoxButtons.OK);
+            }
+            
             load(interactions.Size());
         }
 
@@ -412,7 +461,6 @@ namespace FormsApplication
                 if (interactions.Size() <= 1)
                 {
                     clear();
-                    XML.SaveData(interactions);
                 }
                 else
                 {
@@ -427,7 +475,17 @@ namespace FormsApplication
                         load(toDelete);
                     }
 
-                    XML.SaveData(interactions);
+                    try
+                    {
+                        XML.SaveData(interactions);
+                    }
+                    catch(System.NullReferenceException)
+                    {
+                        MessageBox.Show
+                            ("A problem has occurred while saving FormData.xml. Try removing the file and reopening this application.",
+                             "Error", MessageBoxButtons.OK);
+                    }
+                    
                 }
             }
             else
@@ -440,7 +498,6 @@ namespace FormsApplication
         private void prevButton_Click(object sender, EventArgs e)
         {
             save(CurrentIndex);
-            XML.SaveData(interactions);
 
             int toPrev = CurrentIndex - 1;
 
@@ -458,7 +515,6 @@ namespace FormsApplication
         private void nextButton_Click(object sender, EventArgs e)
         {
             save(CurrentIndex);
-            XML.SaveData(interactions);
 
             int toNext = CurrentIndex + 1;
 
@@ -503,7 +559,6 @@ namespace FormsApplication
             if (e.KeyCode == Keys.Enter)
             {
                 save(CurrentIndex);
-                XML.SaveData(interactions);
                 load(Convert.ToInt32(indexBox.Text));
             }
         }
@@ -528,10 +583,20 @@ namespace FormsApplication
         {
             if ( File.Exists("FormData.xml"))
             {
-                interactions = XML.LoadData();
+                try
+                {
+                    interactions = XML.LoadData();
 
-                // Load the last record
-                load(interactions.Size());
+                    // Load the last record
+                    load(interactions.Size());
+                }
+                catch(System.InvalidOperationException)
+                {
+                    MessageBox.Show
+                        ("A problem has occurred while reading from FormData.xml.", "Error", MessageBoxButtons.OK);
+
+                    this.Close();
+                }
             }
             else
             {
@@ -548,8 +613,17 @@ namespace FormsApplication
          * */
         private void mainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            save(CurrentIndex);
-            XML.SaveData(interactions);
+            try
+            {
+                save(CurrentIndex);
+                XML.SaveData(interactions);
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show
+                    ("A problem has occurred while saving FormData.xml. Try removing the file and reopening this application.",
+                     "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }
