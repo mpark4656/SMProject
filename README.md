@@ -18,9 +18,5 @@ Stores ticket information and facilitates Enterprise ticket creation
 - Add Checklist: Add a checklist to the Description (**Has not been implemented yet**)
 - Window can be enlarged. However, minimum size is enforced to maintain proper positions of GUI components
 
-## Future Improvement Ideas
-- Allow user to increase or decrease font size
-- Remove Minimum Window size limit
-
 ## Copyright
 Created by mpark
