@@ -97,12 +97,15 @@
             // 
             this.classificationBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.classificationBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.classificationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.classificationBox.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classificationBox.FormattingEnabled = true;
             this.classificationBox.Items.AddRange(new object[] {
+            "",
             "Unclassified",
             "Unclassified NNPI",
-            "Classified"});
+            "Classified",
+            "Classified NNPI"});
             this.classificationBox.Location = new System.Drawing.Point(181, 35);
             this.classificationBox.Name = "classificationBox";
             this.classificationBox.Size = new System.Drawing.Size(200, 25);
@@ -184,7 +187,7 @@
             // 
             // copyUsernameButton
             // 
-            this.copyUsernameButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyUsernameButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyUsernameButton.Location = new System.Drawing.Point(385, 7);
             this.copyUsernameButton.Name = "copyUsernameButton";
             this.copyUsernameButton.Size = new System.Drawing.Size(22, 22);
@@ -196,7 +199,7 @@
             // 
             // copyPhoneButton
             // 
-            this.copyPhoneButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyPhoneButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyPhoneButton.Location = new System.Drawing.Point(385, 95);
             this.copyPhoneButton.Name = "copyPhoneButton";
             this.copyPhoneButton.Size = new System.Drawing.Size(22, 22);
@@ -208,7 +211,7 @@
             // 
             // copyInteractionButton
             // 
-            this.copyInteractionButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyInteractionButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyInteractionButton.Location = new System.Drawing.Point(385, 67);
             this.copyInteractionButton.Name = "copyInteractionButton";
             this.copyInteractionButton.Size = new System.Drawing.Size(22, 22);
@@ -220,7 +223,7 @@
             // 
             // copyAssetButton
             // 
-            this.copyAssetButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyAssetButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyAssetButton.Location = new System.Drawing.Point(385, 123);
             this.copyAssetButton.Name = "copyAssetButton";
             this.copyAssetButton.Size = new System.Drawing.Size(22, 22);
@@ -232,7 +235,7 @@
             // 
             // copyMachineButton
             // 
-            this.copyMachineButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyMachineButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyMachineButton.Location = new System.Drawing.Point(385, 151);
             this.copyMachineButton.Name = "copyMachineButton";
             this.copyMachineButton.Size = new System.Drawing.Size(22, 22);
@@ -244,7 +247,7 @@
             // 
             // copyInfoButton
             // 
-            this.copyInfoButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyInfoButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyInfoButton.Location = new System.Drawing.Point(142, 268);
             this.copyInfoButton.Name = "copyInfoButton";
             this.copyInfoButton.Size = new System.Drawing.Size(22, 22);
@@ -256,7 +259,7 @@
             // 
             // pingButton
             // 
-            this.pingButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pingButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pingButton.Location = new System.Drawing.Point(225, 179);
             this.pingButton.Name = "pingButton";
             this.pingButton.Size = new System.Drawing.Size(22, 22);
@@ -304,7 +307,7 @@
             // 
             // copyClassificationButton
             // 
-            this.copyClassificationButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyClassificationButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyClassificationButton.Location = new System.Drawing.Point(385, 38);
             this.copyClassificationButton.Name = "copyClassificationButton";
             this.copyClassificationButton.Size = new System.Drawing.Size(22, 22);
@@ -451,7 +454,7 @@
             // 
             // copyTitleButton
             // 
-            this.copyTitleButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyTitleButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyTitleButton.Location = new System.Drawing.Point(79, 221);
             this.copyTitleButton.Name = "copyTitleButton";
             this.copyTitleButton.Size = new System.Drawing.Size(22, 22);
@@ -468,7 +471,7 @@
             // 
             // checklistButton
             // 
-            this.checklistButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checklistButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checklistButton.Location = new System.Drawing.Point(190, 268);
             this.checklistButton.Name = "checklistButton";
             this.checklistButton.Size = new System.Drawing.Size(35, 22);
@@ -490,7 +493,7 @@
             // 
             // phoneFormatButton
             // 
-            this.phoneFormatButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneFormatButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneFormatButton.Location = new System.Drawing.Point(413, 95);
             this.phoneFormatButton.Name = "phoneFormatButton";
             this.phoneFormatButton.Size = new System.Drawing.Size(22, 22);
@@ -507,7 +510,7 @@
             // 
             // msraButton
             // 
-            this.msraButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msraButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msraButton.Location = new System.Drawing.Point(255, 179);
             this.msraButton.Name = "msraButton";
             this.msraButton.Size = new System.Drawing.Size(22, 22);
@@ -520,7 +523,7 @@
             // 
             // rdcButton
             // 
-            this.rdcButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdcButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdcButton.Location = new System.Drawing.Point(285, 179);
             this.rdcButton.Name = "rdcButton";
             this.rdcButton.Size = new System.Drawing.Size(22, 22);
@@ -532,14 +535,14 @@
             // 
             // uncButton
             // 
-            this.uncButton.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uncButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uncButton.Location = new System.Drawing.Point(315, 179);
             this.uncButton.Name = "uncButton";
             this.uncButton.Size = new System.Drawing.Size(22, 22);
             this.uncButton.TabIndex = 21;
             this.uncButton.Text = "U";
             this.uncTip.SetToolTip(this.uncButton, "This application must run as Administrator to perform this action\r\nConnect to mac" +
-        "hine or IP address with UNC");
+        "hine or IP address with UNC. The drive will be mapped\r\nto Z:");
             this.uncButton.UseVisualStyleBackColor = true;
             this.uncButton.Click += new System.EventHandler(this.uncButton_Click);
             // 
