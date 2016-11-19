@@ -329,8 +329,9 @@ namespace FormsApplication
          * */
         private void LaunchCommandUnc()
         {
-            // Create a cmd file in the same directory as the executable file
-            StreamWriter createFile = new StreamWriter("makeNewConnection.cmd");
+            // Create a temporary cmd file in the Public document folder (It will be removed when the application
+            // exits)
+            StreamWriter createFile = new StreamWriter("C:\\Users\\Public\\Documents\\makeNewConnection.cmd");
 
             // Write command lines to makeNewConnection.cmd
             // RUNDLL32 SHELL32.DLL,SHHelpShortcuts_RunDLL Connect will open "Map a Network Drive" dialog box
@@ -342,11 +343,10 @@ namespace FormsApplication
             createFile.Close();
 
             // Opening the makeNewConnection.cmd via Explorer.exe ensures that the file is opened with the
-            // credential of the currently logged on user
+            // credential of the currently logged on user.
             ProcessStartInfo fileExplorer = new ProcessStartInfo(
-                "explorer.exe" ,
-                Path.Combine(System.Environment.CurrentDirectory ,
-                "makeNewConnection.cmd")
+                "explorer.exe",
+                "C:\\Users\\Public\\Documents\\makeNewConnection.cmd"
             );
 
             // Send "\\MACHINE\c$" to the clipboard (This is how to map the C share on this particular network) 
@@ -862,9 +862,9 @@ namespace FormsApplication
         {
             // makeNewConnection.cmd file is created if user attempts to make UNC connections.
             // Before closing the form, check to see if this file exists. If it does, remove it.
-            if(File.Exists("makeNewConnection.cmd"))
+            if(File.Exists("C:\\Users\\Public\\Documents\\makeNewConnection.cmd"))
             {
-                File.Delete("makeNewConnection.cmd");
+                File.Delete("C:\\Users\\Public\\Documents\\makeNewConnection.cmd");
             }
 
             // Save data at current index (Current Record being displayed)

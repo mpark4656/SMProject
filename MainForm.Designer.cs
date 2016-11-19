@@ -618,7 +618,7 @@
             this.MinimumSize = new System.Drawing.Size(670, 100);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SMProject";
+            this.Text = "SM Notepad";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainWindow_FormClosing);
             this.Load += new System.EventHandler(this.mainWindow_Load);
             this.ResumeLayout(false);
