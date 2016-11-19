@@ -481,6 +481,7 @@
             this.copyButtonTip.SetToolTip(this.checklistButton, "Send to Clipboard");
             this.checklistTip.SetToolTip(this.checklistButton, "Add and Manage Checklists");
             this.checklistButton.UseVisualStyleBackColor = true;
+            this.checklistButton.Click += new System.EventHandler(this.checklistButton_Click);
             // 
             // continuousPingTip
             // 

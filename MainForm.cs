@@ -25,7 +25,10 @@ namespace FormsApplication
         // Untranslated Index: Counts from #1 as humans normally do
         // Translated Index: Counts from 0 as many programming languages do for arrays
         private int CurrentIndex;
-        
+
+        // Another form (CheckListForm) updates this static variable
+        public static string checkListToAdd = null;
+
         /**
          *  Default Constructor
          * */
@@ -195,40 +198,71 @@ namespace FormsApplication
             }
         }
 
-        // User clicks "Ping Continuously" button
+        /**
+         *  User clicks Copy Title Button
+         * */
+        private void copyTitleButton_Click(object sender, EventArgs e)
+        {
+            if (0 < titleField.Text.Length)
+            {
+                Clipboard.SetText(titleField.Text);
+            }
+        }
+
+        /**
+         *  User clicks P button below the Machine text field
+         *  Action: Open Command Prompt and attempt to ping the machine with -t parameter
+         *  */
         private void pingButton_Click(object sender, EventArgs e)
         {
             LaunchCommandPing();
         }
 
-        // User clicks MSRA button
+        /**
+         *  User clicks MSRA button
+         *  Action: Launch MSRA
+         * */
         private void msraButton_Click(object sender, EventArgs e)
         {
             LaunchCommandMsra();
         }
 
-        // User clicks RDC Button
+        /**
+         *  User clicks RDC Button
+         *  Action: Launch RDC
+         * */
         private void rdcButton_Click(object sender, EventArgs e)
         {
             LaunchCommandRdc();
         }
 
-        // User clicks UNC Button
+        /**
+         *  User clicks UNC Button
+         *  Action: Launch Map a Network Drive dialog box
+         * */
         private void uncButton_Click(object sender, EventArgs e)
         {
             LaunchCommandUnc();
             
         }
 
-        // Launch cmd.exe with PING command
+        /**
+         *  Launch cmd.exe with PING -t command
+         * */
         private void LaunchCommandPing()
         {
+            // Process.Start() may throw System.ComponentModel.Win32Exception
             try
             {
-                string arg = "c:\\Windows\\System32\\ping -t " + machineField.Text;
+                // This is the argument (command)
+                string arg = "C:\\Windows\\System32\\ping -t " + machineField.Text;
 
-                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\cmd.exe", "/K " + arg);
+                // Create ProcessStartInfo
+                // /K accepts a command and once executed, the command prompt window stays open.
+                // /C does the same thing except that the command prompt window closes after execution
+                ProcessStartInfo cmd = new ProcessStartInfo("C:\\Windows\\System32\\cmd.exe", "/K " + arg);
 
+                // Start the Process
                 Process exeProcess = Process.Start(cmd);
             }
             catch (System.ComponentModel.Win32Exception)
@@ -240,12 +274,16 @@ namespace FormsApplication
             }
         }
 
-        // Launch MSRA with /offerRA parameter
+        /**
+         *  Launch Microsoft Remote Assistance with /offerRA parameter
+         *  If the machine name is specified, it will automatically connect to the machine
+         * */
         private void LaunchCommandMsra()
         {
+            // Process.Start() may throw System.ComponentModel.Win32Exception
             try
             {
-                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\msra.exe",
+                ProcessStartInfo cmd = new ProcessStartInfo("C:\\Windows\\System32\\msra.exe",
                                                          "/offerRA " + machineField.Text);
 
                 Process exeProcess = Process.Start(cmd);
@@ -259,16 +297,21 @@ namespace FormsApplication
             }
         }
 
-        // Launch RDC with /prompt parameter
+        /**
+         *  Launch RDC with /prompt parameter and /v
+         *  The Remote Desktop Connection will prompt for credential even though it is opened with
+         *   Administrator credential
+         * */
         private void LaunchCommandRdc()
         {
+            ProcessStartInfo cmd = new ProcessStartInfo(
+                "C:\\Windows\\System32\\mstsc.exe",
+                "/prompt " + "/v " + machineField.Text
+            );
+
+            // Process.Start() may throw System.ComponentModel.Win32Exception
             try
             {
-                ProcessStartInfo cmd = new ProcessStartInfo(
-                    "c:\\Windows\\System32\\mstsc.exe",
-                    "/prompt " + "/v " + machineField.Text
-                );
-
                 Process exeProcess = Process.Start(cmd);
             }
             catch(System.ComponentModel.Win32Exception)
@@ -281,27 +324,41 @@ namespace FormsApplication
             
         }
 
-        // Attempt UNC(Universal Naming Convention) Connection
+        /**
+         *  Attempt UNC(Universal Naming Convention) Connection by mapping a network drive
+         * */
         private void LaunchCommandUnc()
         {
+            // Create a cmd file in the same directory as the executable file
             StreamWriter createFile = new StreamWriter("makeNewConnection.cmd");
+
+            // Write command lines to makeNewConnection.cmd
+            // RUNDLL32 SHELL32.DLL,SHHelpShortcuts_RunDLL Connect will open "Map a Network Drive" dialog box
+            // explorer.exe /e,::{20D04FE0-3AEA-1069-A2D8-08002B30309D} will open Computer window
             createFile.WriteLine("C:\\Windows\\System32\\RUNDLL32 SHELL32.DLL,SHHelpShortcuts_RunDLL Connect");
             createFile.WriteLine("explorer.exe /e,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}");
+
+            // Close the file
             createFile.Close();
 
+            // Opening the makeNewConnection.cmd via Explorer.exe ensures that the file is opened with the
+            // credential of the currently logged on user
             ProcessStartInfo fileExplorer = new ProcessStartInfo(
                 "explorer.exe" ,
                 Path.Combine(System.Environment.CurrentDirectory ,
                 "makeNewConnection.cmd")
             );
 
+            // Send "\\MACHINE\c$" to the clipboard (This is how to map the C share on this particular network) 
             Clipboard.SetText("\\\\" + machineField.Text + "\\c$");
 
+            // Inform user that the share path has been copied
             MessageBox.Show(
                 "\"\\\\" + machineField.Text + "\\c$\" has been sent to the clipboard.", 
                 "Attention", MessageBoxButtons.OK
             );
 
+            // Process.Start() may throw System.ComponentModel.Win32Exception
             try
             {
                 Process startFileExplorer = Process.Start(fileExplorer);
@@ -313,16 +370,11 @@ namespace FormsApplication
             }
         }
 
-        // User clicks Copy Title Button
-        private void copyTitleButton_Click(object sender, EventArgs e)
-        {
-            if(0 < titleField.Text.Length )
-            {
-                Clipboard.SetText(titleField.Text);
-            }
-        }
-
-        // Display a popup message when user clicks "Clear" button
+        /**
+         *  User clicks the Clear button.
+         *  Action: Ask for Confirmation and then clear the information on current record
+         *  @post The current record is not deleted (The total number of records in interaction remains the same)
+         * */
         private void clearButton_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show(
@@ -337,7 +389,9 @@ namespace FormsApplication
             }
         }
 
-        // Private function to clear all text fields on the form
+        /**
+         *  This method clears all data on the current record.
+         * */
         private void clear()
         {
             usernameField.Text = "";
@@ -350,7 +404,12 @@ namespace FormsApplication
             descriptionField.Text = "";
         }
 
-        // Allow user to select all contents in the description text box when they press Control - A
+        /**
+         *  User can normally press Control - A to select and highlight all texts in a text box.
+         *  However, Windows form does not allow that shortcut for Multiline text box
+         *  This event emulates the Control - A shortcut and allows user to select all texts in the
+         *  description text box.
+         * */
         private void descriptionField_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.A)
@@ -360,7 +419,29 @@ namespace FormsApplication
             }
         }
 
-        // User clicks Send All to Clipboard button.
+        /**
+         *  User clicks the CL button.
+         *  Action: CheckListForm will open as dialog window
+         *          Once the form closes, the Description Box will be updated
+         * */
+        private void checklistButton_Click(object sender, EventArgs e)
+        {
+            // Initialize the static variable
+            checkListToAdd = "";
+
+            // Create a new form of type CheckListForm
+            CheckListForm checklistForm = new CheckListForm();
+
+            // Open the dialog box
+            checklistForm.ShowDialog();
+            
+            // Update the Decsription (Insert the new checklist)
+            descriptionField.Text += checkListToAdd;
+        }
+
+        /**
+         *  User clicks Send All to Clipboard button.
+         * */
         private void copyAllButton_Click(object sender, EventArgs e)
         {
             // string buffer
@@ -417,6 +498,7 @@ namespace FormsApplication
                 toSend += "--------------------------------" + Environment.NewLine;
             }
             
+            // Add disclaimer statements and then the description contents
             toSend += Environment.NewLine;
             toSend += "Troubleshooting:" + Environment.NewLine;
             toSend += "-----------------------------------------------------------------" + Environment.NewLine;
@@ -430,7 +512,14 @@ namespace FormsApplication
             Clipboard.SetText(toSend);
         }
 
-        // User changes the content of Classification Field
+        /**
+         *  The Title field gains focus (User clicks the Title field or tabs into it).
+         *  Action: Add classification tag
+         *  
+         *  Unclassified NNPI - Add "NNPI - "
+         *  Classified - Add "SIPR - "
+         *  Classified NNPI - Add "SIPR - "
+         * */
         private void titleField_Enter(object sender, EventArgs e)
         {
             if(classificationBox.Text.Equals("Unclassified NNPI") && !titleField.Text.Contains("NNPI"))

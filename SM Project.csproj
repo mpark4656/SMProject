@@ -74,6 +74,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCheckListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCheckListForm.Designer.cs">
+      <DependentUpon>AddCheckListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckListForm.Designer.cs">
+      <DependentUpon>CheckListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckList.cs" />
+    <Compile Include="CheckListStack.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +104,12 @@
     <Compile Include="Record.cs" />
     <Compile Include="RecordStack.cs" />
     <Compile Include="XML.cs" />
+    <EmbeddedResource Include="AddCheckListForm.resx">
+      <DependentUpon>AddCheckListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckListForm.resx">
+      <DependentUpon>CheckListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
