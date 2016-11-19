@@ -10,3 +10,5 @@ F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Deb
 F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.application
 F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.exe
 F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\SMProject.pdb
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\FormsApplication.CheckListForm.resources
+F:\Mike Park\Documents\Visual Studio 2015\Projects\SM Project\SM Project\obj\Debug\FormsApplication.AddCheckListForm.resources
