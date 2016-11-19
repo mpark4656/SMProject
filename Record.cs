@@ -3,7 +3,7 @@
 namespace FormsApplication
 {
     /**
-     *  Record stores contents of each Text Field on the form
+     *  Record stores all the contents of an interaction ticket
      * */
     public class Record
     {
@@ -18,6 +18,7 @@ namespace FormsApplication
 
         /**
          *  Default Constructor
+         *  Initialize all variables
          * */
         public Record()
         {

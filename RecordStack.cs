@@ -3,14 +3,15 @@
 namespace FormsApplication
 {
     /**
-     *  Contains multiple records
+     *  RecordStack is a collection of Records.
+     *  The more interaction user creates, the larger RecordStack gets
      * */
     public class RecordStack
     {
         private List<Record> records;
 
         /**
-         *  Default Constructor - Makes one empty record
+         *  Default Constructor
          * */
         public RecordStack()
         {

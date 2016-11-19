@@ -260,7 +260,7 @@
             // pingButton
             // 
             this.pingButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pingButton.Location = new System.Drawing.Point(225, 179);
+            this.pingButton.Location = new System.Drawing.Point(206, 179);
             this.pingButton.Name = "pingButton";
             this.pingButton.Size = new System.Drawing.Size(22, 22);
             this.pingButton.TabIndex = 18;
@@ -353,7 +353,7 @@
             // totalCountLabel
             // 
             this.totalCountLabel.AutoSize = true;
-            this.totalCountLabel.Location = new System.Drawing.Point(571, 22);
+            this.totalCountLabel.Location = new System.Drawing.Point(566, 22);
             this.totalCountLabel.Name = "totalCountLabel";
             this.totalCountLabel.Size = new System.Drawing.Size(13, 13);
             this.totalCountLabel.TabIndex = 31;
@@ -471,8 +471,9 @@
             // 
             // checklistButton
             // 
+            this.checklistButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checklistButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checklistButton.Location = new System.Drawing.Point(190, 268);
+            this.checklistButton.Location = new System.Drawing.Point(622, 268);
             this.checklistButton.Name = "checklistButton";
             this.checklistButton.Size = new System.Drawing.Size(35, 22);
             this.checklistButton.TabIndex = 22;
@@ -511,7 +512,7 @@
             // msraButton
             // 
             this.msraButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msraButton.Location = new System.Drawing.Point(255, 179);
+            this.msraButton.Location = new System.Drawing.Point(247, 179);
             this.msraButton.Name = "msraButton";
             this.msraButton.Size = new System.Drawing.Size(22, 22);
             this.msraButton.TabIndex = 19;
@@ -524,7 +525,7 @@
             // rdcButton
             // 
             this.rdcButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdcButton.Location = new System.Drawing.Point(285, 179);
+            this.rdcButton.Location = new System.Drawing.Point(290, 179);
             this.rdcButton.Name = "rdcButton";
             this.rdcButton.Size = new System.Drawing.Size(22, 22);
             this.rdcButton.TabIndex = 20;
@@ -536,7 +537,7 @@
             // uncButton
             // 
             this.uncButton.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uncButton.Location = new System.Drawing.Point(315, 179);
+            this.uncButton.Location = new System.Drawing.Point(332, 179);
             this.uncButton.Name = "uncButton";
             this.uncButton.Size = new System.Drawing.Size(22, 22);
             this.uncButton.TabIndex = 21;
