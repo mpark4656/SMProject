@@ -1,7 +1,11 @@
 # SMProject
 Stores ticket information and facilitates Enterprise ticket creation
 
+## Main Application Window
 ![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20451366/4447ca70-adc6-11e6-9fd5-f14fe9485ab3.png)
+
+## Main Checklist Window
+![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456682/1a67277c-ae49-11e6-9179-c750a815b002.png)
 
 ## Features
 - Simple Graphical User Interface for easy use
