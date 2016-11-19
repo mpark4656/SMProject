@@ -288,7 +288,6 @@ namespace FormsApplication
             // If the selected item index is out of bound, take no action
             if( !isSelected())
             {
-                MessageBox.Show("Select a checklist to insert.", "Error", MessageBoxButtons.OK);
                 return;
             }
 
@@ -306,6 +305,17 @@ namespace FormsApplication
 
             // Close this form
             Close();
+        }
+
+        /**
+         *  User double-clicks an item in the list box
+         *  Action: Insert the checklist into the Descriptio Field
+         *  
+         *  It can simply PerformClick() for InsertButton
+         * */
+        private void CheckListSelectionBox_DoubleClick(object sender, EventArgs e)
+        {
+            InsertButton.PerformClick();
         }
 
         /**

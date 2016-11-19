@@ -84,6 +84,7 @@
             this.CheckListSelectionBox.Name = "CheckListSelectionBox";
             this.CheckListSelectionBox.Size = new System.Drawing.Size(262, 565);
             this.CheckListSelectionBox.TabIndex = 6;
+            this.CheckListSelectionBox.DoubleClick += new System.EventHandler(this.CheckListSelectionBox_DoubleClick);
             // 
             // ModifyButton
             // 
