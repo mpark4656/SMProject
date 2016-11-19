@@ -7,6 +7,12 @@ Stores ticket information and facilitates Enterprise ticket creation
 ## Main Checklist Window
 ![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456682/1a67277c-ae49-11e6-9179-c750a815b002.png)
 
+## Add Checklist Window
+![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456688/4d4a2fa4-ae49-11e6-94cd-70b90ae7a975.png)
+
+## Modify Checklist Window
+![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456688/4d4a2fa4-ae49-11e6-94cd-70b90ae7a975.png)
+
 ## Features
 - Simple Graphical User Interface for easy use
 - Ticket Information is saved locally in a XML file (in the same directory as the .exe file) - users decide when their records can be removed and have complete control over saved records
