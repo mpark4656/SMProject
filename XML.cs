@@ -8,12 +8,16 @@ using System.Xml.Serialization;
 
 namespace FormsApplication
 {
+    /**
+     *  This class contains helper methods for saving data to XML file and reading data
+     *  from the XML file.
+     * */
     public class XML
     {
         /**
          * Save RecordStack to .xml file
          * This method will be invoked when user creates a new record, deletes a record
-         *  or when the form is being closed.
+         *  or when the MainForm is being closed.
          * */
         public static void SaveData(RecordStack toSave)
         {
@@ -25,7 +29,7 @@ namespace FormsApplication
 
         /**
          *  Load RecordStack from the .xml file.
-         *  This method will be invoke when the form initially opens.
+         *  This method will be invoke when the MainForm initially opens.
          * */
         public static RecordStack LoadData()
         {

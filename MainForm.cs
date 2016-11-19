@@ -1,35 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
 
 namespace FormsApplication
 {
+    /**
+     *  MainForm is the primary form that user interacts with. It is the first form that opens
+     *  when user starts the application.
+     *  
+     *  A reference to this form will be created in the main function
+     * */
     public partial class MainForm : Form
     {
-        // Data structure that stores records
+        // RecordStack is a collection of Records
+        // One Record has variables that store all information for one interaction ticket
+        // Data will be read from FormData.xml (Given that it exists) and they will be stored
+        // in RecordStack interactions.
         private RecordStack interactions;
 
-        // Keeps track of the current record number that is displayed
+        // Keeps track of the current record number.
+        // The Record number label at the top left corner of the form will use this variable.
+        // Here, index represents the untranslated record #
+        // Untranslated Index: Counts from #1 as humans normally do
+        // Translated Index: Counts from 0 as many programming languages do for arrays
         private int CurrentIndex;
-
-
-        /**********************************************************************************************
-         * The following methods handle events created when user clicks buttons on the form
-         * 1. Copy Button
-         * 2. Ping Button
-         * 3. Clear Button
-         * 4. Send All to Clipboard
-         * 5. Format Phone Number
-         * 6. MSRA Button
-         * *******************************************************************************************/
+        
         /**
          *  Default Constructor
          * */
@@ -38,49 +34,89 @@ namespace FormsApplication
             InitializeComponent();
         }
 
+        /**********************************************************************************************
+         * This section contains methods that deal with the following event actions
+         * 1. Copy Button
+         * 2. Clear Button
+         * 3. Send All to Clipboard Button
+         * 4. Format Phone Number Button
+         * 5. Ping Button
+         * 6. MSRA Button
+         * 7. RDC Button
+         * 8. UNC Button
+         * 9. Add Title Tag
+         * *******************************************************************************************/
+
         /**
          *  User clicks Copy button next to username text field.
-         *  Send the username field content to client's clipboard
+         *  Action: Send the text contents inside the Username field to client's clipboard
+         *  
+         *  If there is no content in the text field, no action is taken.
          * */
         private void copyUsernameButton_Click(object sender, EventArgs e)
         {
+            // Check if the length of texts inside the UsernameField is larger than 0
+            // If so, copy the texts
             if( 0 < usernameField.Text.Length )
             {
                 Clipboard.SetText(usernameField.Text);
             }
         }
 
-        // Send the telephone field content to client's clipboard
+        /**
+         *  User clicks Copy button next to Telephone text field.
+         *  Action: Send the text contents inside the Telephone field to client's clipboard
+         *  
+         *  If there is no content in the text field, no action is taken.
+         * */
         private void copyPhoneButton_Click(object sender, EventArgs e)
         {
-            if( 0 < phoneField.Text.Length )
+            // Check if the length of texts inside Telephone field is larger than 0
+            // If so, copy the texts
+            if ( 0 < phoneField.Text.Length )
             {
                 Clipboard.SetText(phoneField.Text);
             }
         }
 
-        // Add parentheses and dashes in the phone number
+        /**
+         *  User clicks F button next to the Telephone number field
+         *  Action: Change the format of the Telephone to (xxx)xxx-xxxx
+         * */
         private void phoneFormatButton_Click(object sender, EventArgs e)
         {
+            // If the text field contains the following characters, remove them
+            // . ( ) -
             phoneField.Text = phoneField.Text.Replace("-", "");
             phoneField.Text = phoneField.Text.Replace("(", "");
             phoneField.Text = phoneField.Text.Replace(")", "");
+            phoneField.Text = phoneField.Text.Replace(".", "");
+
+            // Remove any whitespace before or after the string literal
             phoneField.Text.Trim();
 
+            // If the length of Telephone number is less than 7 characters, do nothing
             if ( phoneField.Text.Length < 7)
             {
                 return;
             }
-            else if( phoneField.Text.Length <= 7 )
+            // If the length of the Telephone number is 7 characters,
+            // format it as xxx-xxxx
+            else if( phoneField.Text.Length == 7 )
             {
                 phoneField.Text = phoneField.Text.Insert(3, "-");
             }
+            // If the length of the Telephone number is between 8 and 10 characters,
+            // (User probably provided full Telephone number with the area code)
+            // Then, format it as (xxx)xxx-xxxx
             else if( phoneField.Text.Length <= 10 )
             {
                 phoneField.Text = phoneField.Text.Insert(0, "(");
                 phoneField.Text = phoneField.Text.Insert(4, ")");
                 phoneField.Text = phoneField.Text.Insert(8, "-");
             }
+            // Any length higher than 10 characters, simply change the format
+            // to (xxx)xxx-xxxx
             else
             {
                 phoneField.Text = phoneField.Text.Insert(0, "(");
@@ -89,7 +125,12 @@ namespace FormsApplication
             }
         }
 
-        // Send the classification field content to client's clipboard
+        /**
+         * User clicks C button next to the Classification drop-down box
+         * Action: Copy the contents inside the Classification text box
+         * 
+         * If no classification is selected, no action is taken
+         * */
         private void copyClassificationButton_Click(object sender, EventArgs e)
         {
             if( 0 < classificationBox.Text.Length )
@@ -98,7 +139,12 @@ namespace FormsApplication
             }
         }
 
-        // Send the Interaction field content to client's clipboard
+        /**
+         * User clicks C button next to the Interaction text field
+         * Action: Copy the contents inside the Interaction text field
+         * 
+         * If the text box is empty, then no action is taken
+         * */
         private void copyInteractionButton_Click(object sender, EventArgs e)
         {
             if( 0 < interactionField.Text.Length )
@@ -107,7 +153,12 @@ namespace FormsApplication
             }
         }
 
-        // Send the Asset Field content to client's clipboard
+        /**
+         *  User clicks C button next to the Asset text field
+         *  Action: Copy the contents inside the Interaction text field
+         *  
+         *  If the text box is empty, then no action is taken
+         * */
         private void copyAssetButton_Click(object sender, EventArgs e)
         {
             if( 0 < assetField.Text.Length )
@@ -116,7 +167,12 @@ namespace FormsApplication
             }
         }
 
-        // Send the Machine Field content to client's clipboard
+        /**
+         *  User clicks C button next to the Machine text field
+         *  Action: Copy the contents inside the Machine text field
+         *  
+         *  If the text box is empty, then no action is taken
+         * */
         private void copyMachineButton_Click(object sender, EventArgs e)
         {
             if( 0 < machineField.Text.Length )
@@ -125,7 +181,12 @@ namespace FormsApplication
             }
         }
 
-        // Send the Description Field content to client's clipboard
+        /**
+         *  User clicks C button next to the Description text box
+         *  Action: Copy the contents inside the Description text box
+         *  
+         *  If the text box is empty, then no action is taken
+         * */
         private void copyInfoButton_Click(object sender, EventArgs e)
         {
             if( 0 < descriptionField.Text.Length )
@@ -156,6 +217,7 @@ namespace FormsApplication
         private void uncButton_Click(object sender, EventArgs e)
         {
             LaunchCommandUnc();
+            
         }
 
         // Launch cmd.exe with PING command
@@ -171,8 +233,10 @@ namespace FormsApplication
             }
             catch (System.ComponentModel.Win32Exception)
             {
-                DialogResult dialogResult = MessageBox.Show("A problem has occurred.",
-                                                           "Error", MessageBoxButtons.OK);
+                DialogResult dialogResult = MessageBox.Show(
+                    "A problem has occurred.",
+                    "Error", MessageBoxButtons.OK
+                );
             }
         }
 
@@ -188,9 +252,10 @@ namespace FormsApplication
             }
             catch (System.ComponentModel.Win32Exception)
             {
-                DialogResult dialogResult = MessageBox.Show("A problem has occurred.",
-                                                           "Error", MessageBoxButtons.OK);
-
+                DialogResult dialogResult = MessageBox.Show(
+                    "A problem has occurred.",
+                    "Error", MessageBoxButtons.OK
+                );
             }
         }
 
@@ -199,15 +264,19 @@ namespace FormsApplication
         {
             try
             {
-                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\mstsc.exe",
-                                                         "/prompt " + "/v " + machineField.Text);
+                ProcessStartInfo cmd = new ProcessStartInfo(
+                    "c:\\Windows\\System32\\mstsc.exe",
+                    "/prompt " + "/v " + machineField.Text
+                );
 
                 Process exeProcess = Process.Start(cmd);
             }
             catch(System.ComponentModel.Win32Exception)
             {
-                DialogResult dialogResult = MessageBox.Show("A problem has occurred.",
-                                                        "Error", MessageBoxButtons.OK);
+                DialogResult dialogResult = MessageBox.Show(
+                    "A problem has occurred.",
+                    "Error", MessageBoxButtons.OK
+                );
             }
             
         }
@@ -215,24 +284,32 @@ namespace FormsApplication
         // Attempt UNC(Universal Naming Convention) Connection
         private void LaunchCommandUnc()
         {
+            StreamWriter createFile = new StreamWriter("makeNewConnection.cmd");
+            createFile.WriteLine("C:\\Windows\\System32\\RUNDLL32 SHELL32.DLL,SHHelpShortcuts_RunDLL Connect");
+            createFile.WriteLine("explorer.exe /e,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}");
+            createFile.Close();
+
+            ProcessStartInfo fileExplorer = new ProcessStartInfo(
+                "explorer.exe" ,
+                Path.Combine(System.Environment.CurrentDirectory ,
+                "makeNewConnection.cmd")
+            );
+
+            Clipboard.SetText("\\\\" + machineField.Text + "\\c$");
+
+            MessageBox.Show(
+                "\"\\\\" + machineField.Text + "\\c$\" has been sent to the clipboard.", 
+                "Attention", MessageBoxButtons.OK
+            );
+
             try
             {
-                string arg = "c:\\Windows\\System32\\net use z: \\\\" + machineField.Text + "\\c$";
+                Process startFileExplorer = Process.Start(fileExplorer);
 
-                ProcessStartInfo cmd = new ProcessStartInfo("c:\\Windows\\System32\\cmd.exe" , "/C " + arg );
-
-                Process exeProcess = Process.Start(cmd);
-
-                if( exeProcess.WaitForExit(5000) )
-                {
-                    ProcessStartInfo fileExplorer = new ProcessStartInfo("Z:\\");
-                    Process explorer = Process.Start(fileExplorer);
-                }
             }
-            catch (System.ComponentModel.Win32Exception)
+            catch(System.ComponentModel.Win32Exception)
             {
-                DialogResult dialogResult = MessageBox.Show("Unable to connect to \\\\" + machineField.Text + "\\c$.",
-                                                        "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Unable to start process.", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -248,8 +325,11 @@ namespace FormsApplication
         // Display a popup message when user clicks "Clear" button
         private void clearButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to clear all contents on Record #" + CurrentIndex + "?", 
-                                                        "Confirm" , MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(
+                "Do you want to clear all contents on Record #" + CurrentIndex + "?", 
+                "Confirm" ,
+                MessageBoxButtons.YesNo
+            );
 
             if (dialogResult == DialogResult.Yes)
             {
@@ -350,13 +430,6 @@ namespace FormsApplication
             Clipboard.SetText(toSend);
         }
 
-
-
-
-
-        /**********************************************************************************************
-         * The following methods changes the Title depending on the ticket classification
-         * *******************************************************************************************/
         // User changes the content of Classification Field
         private void titleField_Enter(object sender, EventArgs e)
         {
@@ -378,13 +451,10 @@ namespace FormsApplication
             }
         }
 
-
-
-
-
         /**********************************************************************************************
-         * The following methods handle events created when user navigates to different records, add
-         * records or remove records
+         * This section contains methods that are called while user navigates to a different record
+         * (Such as clicking Prev or Next button or specifying the Record# to view in the index field),
+         * creates a new record, or deletes a new record. 
          * 1. load
          * 2. save
          * 3. New Button
@@ -395,13 +465,24 @@ namespace FormsApplication
          * 8. Index TextBox
          * *******************************************************************************************/
 
-        // Load the record and display it. The index given is untranslated index.
+        /**
+         *  This method displays the specified record
+         *  @param index int untranslated record number to display
+         *  @Pre The index MUST not be out of boundary - this method does NOT check for OutOfBoundIndex
+         *       The method invoking this method is responsible for input validation
+         * */
         private void load( int index )
         {
+            // Get the current Record number
             CurrentIndex = index;
+
+            // Update Record# Label
             recordNumberLabel.Text = "#" + index;
+
+            // Translate the given index and load the specified record
             Record toLoad = interactions[index - 1];
 
+            // Display the information on the loaded record
             usernameField.Text = toLoad.Username;
             classificationBox.Text = toLoad.Classification;
             interactionField.Text = toLoad.Interaction;
@@ -414,8 +495,15 @@ namespace FormsApplication
             totalCountLabel.Text = Convert.ToString(interactions.Size());
         }
 
+        /**
+         *  This method saves the specified record to RecordStack interactions
+         *  @param index int untranslated record number to save
+         *  @Pre The index MUST not be out of boundary - this method does NOT check for OutOfBoundIndex
+         *       The method invoking this method is responsible for input validation
+         * */
         private void save( int index )
         {
+            // Translate the index and save the information at the index
             interactions[index - 1].Username = usernameField.Text;
             interactions[index - 1].Classification = classificationBox.Text;
             interactions[index - 1].Interaction = interactionField.Text;
@@ -426,44 +514,66 @@ namespace FormsApplication
             interactions[index - 1].Description = descriptionField.Lines;
         }
 
-        // User clicks New button. Create a new record and add it to the stack
+        /**
+         *  User clicks New button to create a new record
+         *  Action: Create a new record and save it to RecordStack interactions and save all data to XML file
+         * */
         private void newButton_Click(object sender, EventArgs e)
         {
+            // Save the current record
             save(CurrentIndex);
+
+            // Create a new Record and add it to interactions
             Record newRecord = new Record();
             interactions.Add(newRecord);
 
+            // Save all data (RecordStack) to the xml file
             try
             {
                 XML.SaveData(interactions);
             }
-            catch(System.NullReferenceException)
+            catch (System.NullReferenceException)
             {
-                MessageBox.Show
-                    ("A problem has occurred while saving FormData.xml. Try removing the file and reopening this application.",
-                     "Error", MessageBoxButtons.OK);
+                MessageBox.Show(
+                    "A problem has occurred while saving data. FormData.xml may be corrupted.",
+                    "Error",
+                    MessageBoxButtons.OK
+                );
             }
-            
+
+            // Load the newly created Record (Remember that load() accepts untranslated index)
             load(interactions.Size());
         }
 
-        // User clicks Delete button. Delete the current record.
+        /**
+         *  User clicks the Delete button to delete current record being displayed
+         *  Action: Delete the current record and save all data to XML file
+         * */
         private void deleteButton_Click(object sender, EventArgs e)
         {
+            // Untranslated Index of the Record to delete
             int toDelete = CurrentIndex;
 
-            DialogResult dialogResult = MessageBox.Show("Do you want to delete Record #" + CurrentIndex + "?",
-                                                        "Confirm", MessageBoxButtons.YesNo);
+            // Obtain confirmation from user. Do they really want to delete the record?
+            DialogResult dialogResult = MessageBox.Show(
+                "Do you want to delete Record #" + CurrentIndex + "?",
+                "Confirm",
+                MessageBoxButtons.YesNo
+            );
 
+            // If user responds "Yes" to the confirmation,
             if (dialogResult == DialogResult.Yes)
             {
-                // If there is only 1 record, simply clear the current form
+                // If there is only 1 record, simply clear the current form.
+                // The form must have at least 1 Record to function
                 if (interactions.Size() <= 1)
                 {
                     clear();
                 }
+                // There are multiple records, so the current record will be completely removed
                 else
                 {
+                    // Remove the record at the translated index
                     interactions.RemoveAt(toDelete - 1);
 
                     if (toDelete > interactions.Size())
@@ -474,104 +584,144 @@ namespace FormsApplication
                     {
                         load(toDelete);
                     }
-
-                    try
-                    {
-                        XML.SaveData(interactions);
-                    }
-                    catch(System.NullReferenceException)
-                    {
-                        MessageBox.Show
-                            ("A problem has occurred while saving FormData.xml. Try removing the file and reopening this application.",
-                             "Error", MessageBoxButtons.OK);
-                    }
-                    
                 }
             }
+            // User responded "No" to the confirmation. Take no action.
             else
             {
                 return;
-            } 
+            }
+
+            // Save all data (RecordStack) to the xml file
+            // As you can see, the following code runs regardless of whether user chooses Yes or No to
+            // the confirmation.
+            try
+            {
+                XML.SaveData(interactions);
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show(
+                    "A problem has occurred while saving data. FormData.xml may be corrupted.",
+                    "Error",
+                    MessageBoxButtons.OK
+                );
+            }
         }
 
-        // User clicks Previous button. Navigate to the previous interaction.
+        /**
+         *  User clicks Left Arrow button (Previous Button).
+         *  Action: Load the previous record and display it
+         * */
         private void prevButton_Click(object sender, EventArgs e)
         {
+            // Save the current record to RecordStack interactions
             save(CurrentIndex);
 
+            // Get the untranslated index of the previous record
             int toPrev = CurrentIndex - 1;
 
+            // If the previous index is zero or lower, it will load the
+            // last record in the RecordStack interactions
             if( toPrev <= 0 )
             {
                 load(interactions.Size());
             }
+            // If the previous index is in the middle range, simply load it
             else
             {
                 load(toPrev);
             }
         }
 
-        // User clicks Next button. Navigate to the next interaction.
+        /**
+         *  User clicks Right Arrow button (Next Button).
+         *  Action: Load the next record and display it
+         * */
         private void nextButton_Click(object sender, EventArgs e)
         {
+            // Save the current record to RecordStack interactions
             save(CurrentIndex);
 
+            // Get the untranslated index of the next record
             int toNext = CurrentIndex + 1;
 
-            if( toNext > interactions.Size() )
+            // If the next index is higher than the size of current interactions
+            // go back to the first record and load it
+            if ( toNext > interactions.Size() )
             {
                 load(1);
             }
+            // If the next index is in the middle range, simply load it
             else
             {
                 load(toNext);
             }
         }
 
-        // Validate the input that user enters in indexBox
+        /**
+         *  Index Box receives input from user. User specifies the record# they want to access.
+         *  Due to the high possibility of invalid input such as Out-Of-Bound index, non integer characters
+         *  and etc, a strict validation is required.
+         *  
+         *  Event is raised when user changes the texts inside the Index box. If the entered charater is non-integer,
+         *  the character is immediately removed. If the entered integer is out of bound, it will also be removed and
+         *  a index value that is within range will replace the removed integer.
+         * */
         private void indexBox_TextChanged(object sender, EventArgs e)
         {
+            // If no character is entered, set the new texts to '1'
             if( indexBox.Text.Length < 1)
             {
                 indexBox.Text = Convert.ToString(1);
             }
+            // If entered character is NOT numeric, replace it with the CurrentIndex
             else if (System.Text.RegularExpressions.Regex.IsMatch(indexBox.Text, "[^0-9]"))
             {
                 indexBox.Text = Convert.ToString(CurrentIndex);
             }
+            // If the entered integer is larger than the current size of interactions,
+            // set the new texts to the index of the last record in the interactions
             else if( Convert.ToInt32(indexBox.Text) > interactions.Size() )
             {
                 indexBox.Text = Convert.ToString(interactions.Size());
             }
+            // If the entered integer is lower than 1, set the new texts to '1'
             else if( Convert.ToInt32(indexBox.Text) < 1 )
             {
                 indexBox.Text = Convert.ToString(1);
             }
+            // If the entered character is valid, take no action
             else
             {
                 return;
             }
         }
 
-        // Navigate to the entered index when user hits Enter key while indexBox has focus
+        /**
+         * User hits Enter key while the index box has focus. Load and display the record
+         * specified by the value in the Index box.
+         * @pre It is assumed that the entered integer is valid and within range
+         * */
         private void indexBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                // Save the current record
                 save(CurrentIndex);
+
+                // Load the record at the given index
                 load(Convert.ToInt32(indexBox.Text));
             }
         }
 
-
-
-
-
-
         /**********************************************************************************************
-         * The following functions perform any necessary action when the form loads or when the form
-         * closes
+         * This section has methods define event actions for when the MainForm first opens and when the
+         * MainForm is closing.
+         * 1. MainForm Loads
+         * 2. MainForm Closing
          * *******************************************************************************************/
+
         /**
          *  This method performs necessary actions to retrieve data from xml file when the Form 
          *   application opens
@@ -581,10 +731,12 @@ namespace FormsApplication
          * */
         private void mainWindow_Load(object sender, EventArgs e)
         {
-            if ( File.Exists("FormData.xml"))
+            // If FormData.xml exists in the current directory, try to read data from it
+            if(File.Exists("FormData.xml"))
             {
                 try
                 {
+                    // Save data in RecordStack interactions
                     interactions = XML.LoadData();
 
                     // Load the last record
@@ -592,12 +744,18 @@ namespace FormsApplication
                 }
                 catch(System.InvalidOperationException)
                 {
-                    MessageBox.Show
-                        ("A problem has occurred while reading from FormData.xml.", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show(
+                        "A problem has occurred while reading from FormData.xml." +
+                        "Try removing or renaming FormData.xml. Then, reopen this application.",
+                        "Error",
+                        MessageBoxButtons.OK
+                    );
 
+                    // Close the form after displaying the error message
                     this.Close();
                 }
             }
+            // If the file does not exist, simply create an empty record (Fresh Start).
             else
             {
                 Record initial = new Record();
@@ -609,10 +767,19 @@ namespace FormsApplication
 
         /**
          *  While the form is being closed (User clicked Close button), save the current record
-         *   and save all data to .xml file
+         *   and then save all data in RecordStack interactions to .xml file
          * */
         private void mainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // makeNewConnection.cmd file is created if user attempts to make UNC connections.
+            // Before closing the form, check to see if this file exists. If it does, remove it.
+            if(File.Exists("makeNewConnection.cmd"))
+            {
+                File.Delete("makeNewConnection.cmd");
+            }
+
+            // Save data at current index (Current Record being displayed)
+            // Then, save all data (RecordStack) to the xml file
             try
             {
                 save(CurrentIndex);
@@ -620,9 +787,11 @@ namespace FormsApplication
             }
             catch (System.NullReferenceException)
             {
-                MessageBox.Show
-                    ("A problem has occurred while saving FormData.xml. Try removing the file and reopening this application.",
-                     "Error", MessageBoxButtons.OK);
+                MessageBox.Show(
+                    "A problem has occurred while saving data. FormData.xml may be corrupted.",
+                    "Error",
+                    MessageBoxButtons.OK
+                );
             }
         }
     }
