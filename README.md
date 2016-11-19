@@ -11,7 +11,7 @@ Stores ticket information and facilitates Enterprise ticket creation
 ![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456688/4d4a2fa4-ae49-11e6-94cd-70b90ae7a975.png)
 
 ## Modify Checklist Window
-![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456688/4d4a2fa4-ae49-11e6-94cd-70b90ae7a975.png)
+![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456691/6765437e-ae49-11e6-87d0-44793db0ed2f.png)
 
 ## Features
 - Simple Graphical User Interface for easy use
@@ -24,8 +24,8 @@ Stores ticket information and facilitates Enterprise ticket creation
 - Ping: Opens cmd.exe and continuously pings the specified machine name or IP Address with a click of the button - users can instantly find out whether the machine name can be resolved to an IP Address or whether the host has network connectivity
 - MSRA: Opens Microsoft Remote Assistance and attempts to connect to the specified machine with /offerRA parameter
 - RDC: Attempts Remote Desktop Connection to specified machine with /prompt parameter
-- UNC: Opens "Map a Network Drive" dialog window with UNC path sent to clipboard(Currently Bugged)
-- Add Checklist: Add a checklist to the Description (**Has not been implemented yet**)
+- UNC: Opens "Map a Network Drive" dialog window with UNC path sent to clipboard
+- Add Checklist: Add a checklist to the Description or send a checklist to the clipboard
 - Window can be enlarged. However, minimum size is enforced to maintain proper positions of GUI components
 
 ## Copyright
