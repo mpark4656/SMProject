@@ -22,7 +22,11 @@ Stores ticket information and facilitates Enterprise ticket creation
 ![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456682/1a67277c-ae49-11e6-9179-c750a815b002.png)
 
 ### Features
-
+- Create and add your own checklist
+- Click Insert to add the checklist in the Description or send it to the clipboard to be copied later
+- Re-arrange items in the List Box
+- Double-Click an item to add it in the Description right away
+- Remove or Modify checklist items as necessary
 
 ## Add Checklist Window
 ![Program GUI Image](https://cloud.githubusercontent.com/assets/16367862/20456688/4d4a2fa4-ae49-11e6-94cd-70b90ae7a975.png)
