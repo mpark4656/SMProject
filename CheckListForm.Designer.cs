@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.InsertButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.MoveUpButton = new System.Windows.Forms.Button();
             this.MoveDownButton = new System.Windows.Forms.Button();
+            this.InsertTip = new System.Windows.Forms.ToolTip(this.components);
+            this.SendToClipboardTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // InsertButton
@@ -47,6 +50,7 @@
             this.InsertButton.Size = new System.Drawing.Size(89, 20);
             this.InsertButton.TabIndex = 1;
             this.InsertButton.Text = "Insert";
+            this.InsertTip.SetToolTip(this.InsertButton, "Add the Selected Checklist to the Description.");
             this.InsertButton.UseVisualStyleBackColor = true;
             this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
@@ -105,6 +109,7 @@
             this.CopyButton.Size = new System.Drawing.Size(167, 20);
             this.CopyButton.TabIndex = 8;
             this.CopyButton.Text = "Send to Clipboard";
+            this.SendToClipboardTip.SetToolTip(this.CopyButton, "Click here to send the contents of the selected\r\nChecklist to the clipboard.");
             this.CopyButton.UseVisualStyleBackColor = true;
             this.CopyButton.Click += new System.EventHandler(this.CopyButton_Click);
             // 
@@ -141,6 +146,14 @@
             this.MoveDownButton.UseVisualStyleBackColor = true;
             this.MoveDownButton.Click += new System.EventHandler(this.MoveDownButton_Click);
             // 
+            // InsertTip
+            // 
+            this.InsertTip.ToolTipTitle = "Click to Insert to the Description Box";
+            // 
+            // SendToClipboardTip
+            // 
+            this.SendToClipboardTip.ToolTipTitle = "Send the Contents to the Clipboard";
+            // 
             // CheckListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,5 +186,7 @@
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button MoveUpButton;
         private System.Windows.Forms.Button MoveDownButton;
+        private System.Windows.Forms.ToolTip InsertTip;
+        private System.Windows.Forms.ToolTip SendToClipboardTip;
     }
 }

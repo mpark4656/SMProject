@@ -12,20 +12,20 @@ namespace FormsApplication
 {
     public partial class AddCheckListForm : Form
     {
-        /**
-         *  Default Constructor
-         *  This constructor is called when use is adding a new checklist
-         * */
+        /// <summary>
+        ///  Default Constructor
+        ///  This constructor is called when use is adding a new checklist
+        /// </summary>
         public AddCheckListForm()
         {
             InitializeComponent();
         }
 
-        /**
-         *  This contructor is invoked when user is modifying a current existing Checklist
-         *  Modifying and Adding have similar capabilities so all we really need is to change
-         *  the name of the Window and the Button name.
-         * */
+        /// <summary>
+        ///  This contructor is invoked when user is modifying a current existing Checklist
+        ///  Modifying and Adding have similar capabilities so all we really need is to change
+        ///  the name of the Window and the Button name.
+        /// </summary>
         public AddCheckListForm( string title , string modifyButton )
         {
             InitializeComponent();
@@ -38,10 +38,10 @@ namespace FormsApplication
             ValueField.Lines = CheckListForm.valueToAdd;
         }
 
-        /**
-         *  User clicks the Add button
-         *  Action: Update CheckListForm.displayToAdd and CheckListForm.valueToAdd
-         * */
+        /// <summary>
+        ///  User clicks the Add button
+        ///  Action: Update CheckListForm.displayToAdd and CheckListForm.valueToAdd
+        /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
             // Trim whitespace around the Display Field Text
@@ -65,10 +65,10 @@ namespace FormsApplication
             Close();
         }
 
-        /**
-         *  User clicks Cancel/Close button
-         *  Action: Close this form
-         * */
+        /// <summary>
+        ///  User clicks Cancel/Close button
+        ///  Action: Close this form
+        /// </summary>
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Close();

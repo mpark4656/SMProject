@@ -65,19 +65,23 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleField = new System.Windows.Forms.TextBox();
             this.copyTitleButton = new System.Windows.Forms.Button();
-            this.copyButtonTip = new System.Windows.Forms.ToolTip(this.components);
+            this.CopyButtonTip = new System.Windows.Forms.ToolTip(this.components);
             this.checklistButton = new System.Windows.Forms.Button();
-            this.continuousPingTip = new System.Windows.Forms.ToolTip(this.components);
-            this.copyAllTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ContinuousPingTip = new System.Windows.Forms.ToolTip(this.components);
+            this.CopyAllTip = new System.Windows.Forms.ToolTip(this.components);
             this.phoneFormatButton = new System.Windows.Forms.Button();
-            this.formatPhoneNumberTip = new System.Windows.Forms.ToolTip(this.components);
+            this.FormatPhoneNumberTip = new System.Windows.Forms.ToolTip(this.components);
             this.msraButton = new System.Windows.Forms.Button();
             this.rdcButton = new System.Windows.Forms.Button();
             this.uncButton = new System.Windows.Forms.Button();
-            this.msraTip = new System.Windows.Forms.ToolTip(this.components);
-            this.rdcTip = new System.Windows.Forms.ToolTip(this.components);
-            this.uncTip = new System.Windows.Forms.ToolTip(this.components);
-            this.checklistTip = new System.Windows.Forms.ToolTip(this.components);
+            this.MsraTip = new System.Windows.Forms.ToolTip(this.components);
+            this.RdcTip = new System.Windows.Forms.ToolTip(this.components);
+            this.UncTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ChecklistTip = new System.Windows.Forms.ToolTip(this.components);
+            this.NewRecordTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ClearRecordTip = new System.Windows.Forms.ToolTip(this.components);
+            this.DeleteRecordTip = new System.Windows.Forms.ToolTip(this.components);
+            this.GoToTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // usernameLabel
@@ -180,7 +184,7 @@
             this.copyAllButton.Size = new System.Drawing.Size(259, 28);
             this.copyAllButton.TabIndex = 8;
             this.copyAllButton.Text = "Send All to Clipboard";
-            this.copyAllTip.SetToolTip(this.copyAllButton, "Send All Information on this Record to Clipboard.\r\nIt does not include the Title." +
+            this.CopyAllTip.SetToolTip(this.copyAllButton, "Send All Information on this Record to Clipboard.\r\nIt does not include the Title." +
         " Copy the Title separately.");
             this.copyAllButton.UseVisualStyleBackColor = true;
             this.copyAllButton.Click += new System.EventHandler(this.copyAllButton_Click);
@@ -193,7 +197,7 @@
             this.copyUsernameButton.Size = new System.Drawing.Size(22, 22);
             this.copyUsernameButton.TabIndex = 9;
             this.copyUsernameButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyUsernameButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyUsernameButton, "Send to Clipboard");
             this.copyUsernameButton.UseVisualStyleBackColor = true;
             this.copyUsernameButton.Click += new System.EventHandler(this.copyUsernameButton_Click);
             // 
@@ -205,7 +209,7 @@
             this.copyPhoneButton.Size = new System.Drawing.Size(22, 22);
             this.copyPhoneButton.TabIndex = 12;
             this.copyPhoneButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyPhoneButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyPhoneButton, "Send to Clipboard");
             this.copyPhoneButton.UseVisualStyleBackColor = true;
             this.copyPhoneButton.Click += new System.EventHandler(this.copyPhoneButton_Click);
             // 
@@ -217,7 +221,7 @@
             this.copyInteractionButton.Size = new System.Drawing.Size(22, 22);
             this.copyInteractionButton.TabIndex = 11;
             this.copyInteractionButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyInteractionButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyInteractionButton, "Send to Clipboard");
             this.copyInteractionButton.UseVisualStyleBackColor = true;
             this.copyInteractionButton.Click += new System.EventHandler(this.copyInteractionButton_Click);
             // 
@@ -229,7 +233,7 @@
             this.copyAssetButton.Size = new System.Drawing.Size(22, 22);
             this.copyAssetButton.TabIndex = 13;
             this.copyAssetButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyAssetButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyAssetButton, "Send to Clipboard");
             this.copyAssetButton.UseVisualStyleBackColor = true;
             this.copyAssetButton.Click += new System.EventHandler(this.copyAssetButton_Click);
             // 
@@ -241,7 +245,7 @@
             this.copyMachineButton.Size = new System.Drawing.Size(22, 22);
             this.copyMachineButton.TabIndex = 14;
             this.copyMachineButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyMachineButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyMachineButton, "Send to Clipboard");
             this.copyMachineButton.UseVisualStyleBackColor = true;
             this.copyMachineButton.Click += new System.EventHandler(this.copyMachineButton_Click);
             // 
@@ -253,7 +257,7 @@
             this.copyInfoButton.Size = new System.Drawing.Size(22, 22);
             this.copyInfoButton.TabIndex = 16;
             this.copyInfoButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyInfoButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyInfoButton, "Send to Clipboard");
             this.copyInfoButton.UseVisualStyleBackColor = true;
             this.copyInfoButton.Click += new System.EventHandler(this.copyInfoButton_Click);
             // 
@@ -265,7 +269,7 @@
             this.pingButton.Size = new System.Drawing.Size(22, 22);
             this.pingButton.TabIndex = 18;
             this.pingButton.Text = "P";
-            this.continuousPingTip.SetToolTip(this.pingButton, "Click to Continuously Ping this Machine or IP Address");
+            this.ContinuousPingTip.SetToolTip(this.pingButton, "Click to Continuously Ping this Machine or IP Address");
             this.pingButton.UseVisualStyleBackColor = true;
             this.pingButton.Click += new System.EventHandler(this.pingButton_Click);
             // 
@@ -277,6 +281,7 @@
             this.newButton.Size = new System.Drawing.Size(146, 30);
             this.newButton.TabIndex = 26;
             this.newButton.Text = "New";
+            this.NewRecordTip.SetToolTip(this.newButton, "Click here to create a new record");
             this.newButton.UseVisualStyleBackColor = true;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
@@ -288,6 +293,7 @@
             this.clearButton.Size = new System.Drawing.Size(146, 30);
             this.clearButton.TabIndex = 27;
             this.clearButton.Text = "Clear";
+            this.ClearRecordTip.SetToolTip(this.clearButton, "Click here to erase all data on this form.");
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
@@ -313,7 +319,7 @@
             this.copyClassificationButton.Size = new System.Drawing.Size(22, 22);
             this.copyClassificationButton.TabIndex = 10;
             this.copyClassificationButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyClassificationButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyClassificationButton, "Send to Clipboard");
             this.copyClassificationButton.UseVisualStyleBackColor = true;
             this.copyClassificationButton.Click += new System.EventHandler(this.copyClassificationButton_Click);
             // 
@@ -325,6 +331,7 @@
             this.deleteButton.Size = new System.Drawing.Size(146, 30);
             this.deleteButton.TabIndex = 28;
             this.deleteButton.Text = "Delete";
+            this.DeleteRecordTip.SetToolTip(this.deleteButton, "Click here to remove the current form.");
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
@@ -367,6 +374,7 @@
             this.indexBox.Size = new System.Drawing.Size(30, 20);
             this.indexBox.TabIndex = 29;
             this.indexBox.Text = "1";
+            this.GoToTip.SetToolTip(this.indexBox, "Enter the Record #");
             this.indexBox.TextChanged += new System.EventHandler(this.indexBox_TextChanged);
             this.indexBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.indexBox_KeyDown);
             // 
@@ -460,14 +468,13 @@
             this.copyTitleButton.Size = new System.Drawing.Size(22, 22);
             this.copyTitleButton.TabIndex = 15;
             this.copyTitleButton.Text = "C";
-            this.copyButtonTip.SetToolTip(this.copyTitleButton, "Send to Clipboard");
+            this.CopyButtonTip.SetToolTip(this.copyTitleButton, "Send to Clipboard");
             this.copyTitleButton.UseVisualStyleBackColor = true;
             this.copyTitleButton.Click += new System.EventHandler(this.copyTitleButton_Click);
             // 
-            // copyButtonTip
+            // CopyButtonTip
             // 
-            this.copyButtonTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.copyButtonTip.ToolTipTitle = "Copy this Text Field";
+            this.CopyButtonTip.ToolTipTitle = "Click to Copy this Field.";
             // 
             // checklistButton
             // 
@@ -478,20 +485,17 @@
             this.checklistButton.Size = new System.Drawing.Size(35, 22);
             this.checklistButton.TabIndex = 22;
             this.checklistButton.Text = "CL";
-            this.copyButtonTip.SetToolTip(this.checklistButton, "Send to Clipboard");
-            this.checklistTip.SetToolTip(this.checklistButton, "Add and Manage Checklists");
+            this.ChecklistTip.SetToolTip(this.checklistButton, "Add and Manage Checklists");
             this.checklistButton.UseVisualStyleBackColor = true;
             this.checklistButton.Click += new System.EventHandler(this.checklistButton_Click);
             // 
-            // continuousPingTip
+            // ContinuousPingTip
             // 
-            this.continuousPingTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.continuousPingTip.ToolTipTitle = "Continous Ping";
+            this.ContinuousPingTip.ToolTipTitle = "Continous Ping";
             // 
-            // copyAllTip
+            // CopyAllTip
             // 
-            this.copyAllTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.copyAllTip.ToolTipTitle = "Copy All Information";
+            this.CopyAllTip.ToolTipTitle = "Copy All Information";
             // 
             // phoneFormatButton
             // 
@@ -501,14 +505,13 @@
             this.phoneFormatButton.Size = new System.Drawing.Size(22, 22);
             this.phoneFormatButton.TabIndex = 17;
             this.phoneFormatButton.Text = "F";
-            this.formatPhoneNumberTip.SetToolTip(this.phoneFormatButton, "Add Parentheses and a Dash.\r\n(xxx)xxx-xxxx");
+            this.FormatPhoneNumberTip.SetToolTip(this.phoneFormatButton, "Add Parentheses and a Dash.\r\n(xxx)xxx-xxxx");
             this.phoneFormatButton.UseVisualStyleBackColor = true;
             this.phoneFormatButton.Click += new System.EventHandler(this.phoneFormatButton_Click);
             // 
-            // formatPhoneNumberTip
+            // FormatPhoneNumberTip
             // 
-            this.formatPhoneNumberTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.formatPhoneNumberTip.ToolTipTitle = "Format Telephone Number";
+            this.FormatPhoneNumberTip.ToolTipTitle = "Format Telephone Number";
             // 
             // msraButton
             // 
@@ -518,7 +521,7 @@
             this.msraButton.Size = new System.Drawing.Size(22, 22);
             this.msraButton.TabIndex = 19;
             this.msraButton.Text = "M";
-            this.msraTip.SetToolTip(this.msraButton, "This application must run as Administrator to perform this action\r\nConnect to the" +
+            this.MsraTip.SetToolTip(this.msraButton, "This application must run as Administrator to perform this action\r\nConnect to the" +
         " machine or IP address with MSRA");
             this.msraButton.UseVisualStyleBackColor = true;
             this.msraButton.Click += new System.EventHandler(this.msraButton_Click);
@@ -531,7 +534,7 @@
             this.rdcButton.Size = new System.Drawing.Size(22, 22);
             this.rdcButton.TabIndex = 20;
             this.rdcButton.Text = "R";
-            this.rdcTip.SetToolTip(this.rdcButton, "Connect to the machine or IP address with RDC");
+            this.RdcTip.SetToolTip(this.rdcButton, "Connect to the machine or IP address with RDC");
             this.rdcButton.UseVisualStyleBackColor = true;
             this.rdcButton.Click += new System.EventHandler(this.rdcButton_Click);
             // 
@@ -543,30 +546,42 @@
             this.uncButton.Size = new System.Drawing.Size(22, 22);
             this.uncButton.TabIndex = 21;
             this.uncButton.Text = "U";
-            this.uncTip.SetToolTip(this.uncButton, "This application must run as Administrator to perform this action\r\nConnect to mac" +
-        "hine or IP address with UNC. The drive will be mapped\r\nto Z:");
+            this.UncTip.SetToolTip(this.uncButton, "Connect to machine or IP address with UNC.\r\nIt will open \"Map a Network Drive\" di" +
+        "alog box.");
             this.uncButton.UseVisualStyleBackColor = true;
             this.uncButton.Click += new System.EventHandler(this.uncButton_Click);
             // 
-            // msraTip
+            // MsraTip
             // 
-            this.msraTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.msraTip.ToolTipTitle = "Connect to Host with Microsoft Remote Assistance";
+            this.MsraTip.ToolTipTitle = "Connect to Host with Microsoft Remote Assistance";
             // 
-            // rdcTip
+            // RdcTip
             // 
-            this.rdcTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.rdcTip.ToolTipTitle = "Connect to Host with Remote Desktop Connection";
+            this.RdcTip.ToolTipTitle = "Connect to Host with Remote Desktop Connection";
             // 
-            // uncTip
+            // UncTip
             // 
-            this.uncTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.uncTip.ToolTipTitle = "Connect to Host with Universal Naming Convention";
+            this.UncTip.ToolTipTitle = "Connect to Host with Universal Naming Convention";
             // 
-            // checklistTip
+            // ChecklistTip
             // 
-            this.checklistTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.checklistTip.ToolTipTitle = "Click here to add a Checklist";
+            this.ChecklistTip.ToolTipTitle = "Checklist Manager";
+            // 
+            // NewRecordTip
+            // 
+            this.NewRecordTip.ToolTipTitle = "Create a New Record";
+            // 
+            // ClearRecordTip
+            // 
+            this.ClearRecordTip.ToolTipTitle = "Clear All Data on this Record";
+            // 
+            // DeleteRecordTip
+            // 
+            this.DeleteRecordTip.ToolTipTitle = "Delete Current Record";
+            // 
+            // GoToTip
+            // 
+            this.GoToTip.ToolTipTitle = "Press Enter to Go to this #";
             // 
             // MainForm
             // 
@@ -662,19 +677,23 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.TextBox titleField;
         private System.Windows.Forms.Button copyTitleButton;
-        private System.Windows.Forms.ToolTip copyButtonTip;
-        private System.Windows.Forms.ToolTip continuousPingTip;
-        private System.Windows.Forms.ToolTip copyAllTip;
+        private System.Windows.Forms.ToolTip CopyButtonTip;
+        private System.Windows.Forms.ToolTip ContinuousPingTip;
+        private System.Windows.Forms.ToolTip CopyAllTip;
         private System.Windows.Forms.Button phoneFormatButton;
-        private System.Windows.Forms.ToolTip formatPhoneNumberTip;
+        private System.Windows.Forms.ToolTip FormatPhoneNumberTip;
         private System.Windows.Forms.Button checklistButton;
         private System.Windows.Forms.Button msraButton;
         private System.Windows.Forms.Button rdcButton;
         private System.Windows.Forms.Button uncButton;
-        private System.Windows.Forms.ToolTip msraTip;
-        private System.Windows.Forms.ToolTip rdcTip;
-        private System.Windows.Forms.ToolTip uncTip;
-        private System.Windows.Forms.ToolTip checklistTip;
+        private System.Windows.Forms.ToolTip MsraTip;
+        private System.Windows.Forms.ToolTip RdcTip;
+        private System.Windows.Forms.ToolTip UncTip;
+        private System.Windows.Forms.ToolTip ChecklistTip;
+        private System.Windows.Forms.ToolTip NewRecordTip;
+        private System.Windows.Forms.ToolTip ClearRecordTip;
+        private System.Windows.Forms.ToolTip DeleteRecordTip;
+        private System.Windows.Forms.ToolTip GoToTip;
     }
 }
 
