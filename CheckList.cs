@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FormsApplication
 {
-    /**
-     *  This class contains name of a checlist and the contents of the checklist
-     * */
+    /// <summary>
+    ///  This class contains name of a checlist and the contents of the checklist
+    /// </summary>
     public class CheckList
     {
         // Name of this checklist
@@ -17,9 +17,9 @@ namespace FormsApplication
         // Array of strings representing the contents of the checklist
         private string[] value;
 
-        /**
-         *  Default Constructor
-         * */
+        /// <summary>
+        ///  Default Constructor
+        /// </summary> 
         public CheckList()
         {
             display = "";
@@ -27,18 +27,18 @@ namespace FormsApplication
             value[0] = "";
         }
 
-        /**
-         *  Non-Default Constructor
-         * */
+        /// <summary>
+        ///  Non-Default Constructor
+        /// </summary>
         public CheckList( string display , string[] value )
         {
             Display = display;
             Value = value;
         }
 
-        /**
-         *  Public getter and setter for display
-         * */
+        /// <summary>
+        ///  Public getter and setter for display
+        /// </summary>
         public string Display
         {
             get
@@ -51,9 +51,9 @@ namespace FormsApplication
             }
         }
 
-        /**
-         *  Public getter and setter for value
-         * */
+        /// <summary>
+        ///  Public getter and setter for value
+        /// </summary>
         public string[] Value
         {
             get

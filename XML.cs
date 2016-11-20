@@ -8,17 +8,17 @@ using System.Xml.Serialization;
 
 namespace FormsApplication
 {
-    /**
-     *  This class contains helper methods for saving data to XML file and reading data
-     *  from the XML file.
-     * */
+    /// <summary>
+    ///  This class contains helper methods for saving data to XML file and reading data
+    ///  from the XML file.
+    /// </summary>
     public class XML
     {
-        /**
-         * Save RecordStack to .xml file
-         * This method will be invoked when user creates a new record, deletes a record
-         *  or when the MainForm is being closed.
-         * */
+        /// <summary>
+        ///  Save RecordStack to .xml file
+        ///  This method will be invoked when user creates a new record, deletes a record
+        ///  or when the MainForm is being closed.
+        /// </summary>
         public static void SaveData(RecordStack toSave)
         {
             XmlSerializer sr = new XmlSerializer( toSave.GetType());
@@ -27,11 +27,11 @@ namespace FormsApplication
             writer.Close();
         }
 
-        /**
-         * Save CheckList to .xml file
-         * This method will be invoked when user opens Checklist window, deletes a checklist
-         *  or when the CheckListForm is being closed.
-         * */
+        /// <summary>
+        ///  Save CheckList to .xml file
+        ///  This method will be invoked when user opens Checklist window, deletes a checklist
+        ///  or when the CheckListForm is being closed.
+        /// </summary>
         public static void SaveCheckList(CheckListStack toSave)
         {
             XmlSerializer sr = new XmlSerializer(toSave.GetType());
@@ -40,10 +40,10 @@ namespace FormsApplication
             writer.Close();
         }
 
-        /**
-         *  Load RecordStack from the .xml file.
-         *  This method will be invoked when the MainForm initially opens.
-         * */
+        /// <summary>
+        ///  Load RecordStack from the .xml file.
+        ///  This method will be invoked when the MainForm initially opens.
+        /// </summary>
         public static RecordStack LoadData()
         {
             XmlSerializer sr = new XmlSerializer(typeof(RecordStack));
@@ -54,10 +54,10 @@ namespace FormsApplication
             return toLoad;
         }
 
-        /**
-         *  Load CheckListStack from the .xml file.
-         *  This method will be invoked when the CheckListForm initially opens.
-         * */
+        /// <summary>
+        ///  Load CheckListStack from the .xml file.
+        ///  This method will be invoked when the CheckListForm initially opens.
+        /// </summary>
         public static CheckListStack LoadCheckList()
         {
             XmlSerializer sr = new XmlSerializer(typeof(CheckListStack));

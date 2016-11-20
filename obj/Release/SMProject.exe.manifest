@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMProject.exe" size="780752">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMProject.exe" size="781776">
       <assemblyIdentity name="SMProject" version="4.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PU94t37ZzCJWobsVztEA+bhPd3lLIPrnO5DHMXZPtts=</dsig:DigestValue>
+        <dsig:DigestValue>mvhZw+QN9z/DiL/D5iS0Di/9ER8Atm198ieHUCAS1sQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
