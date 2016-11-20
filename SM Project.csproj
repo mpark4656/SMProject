@@ -89,8 +89,8 @@
     <Compile Include="CheckListForm.Designer.cs">
       <DependentUpon>CheckListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckList.cs" />
-    <Compile Include="CheckListStack.cs" />
+    <Compile Include="Checklist\CheckList.cs" />
+    <Compile Include="Checklist\CheckListStack.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,9 +104,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Record.cs" />
-    <Compile Include="RecordStack.cs" />
-    <Compile Include="XML.cs" />
+    <Compile Include="Record\Record.cs" />
+    <Compile Include="Record\RecordStack.cs" />
+    <Compile Include="XMLSerializer\XML.cs" />
     <EmbeddedResource Include="AddCheckListForm.resx">
       <DependentUpon>AddCheckListForm.cs</DependentUpon>
     </EmbeddedResource>

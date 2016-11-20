@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml.Serialization;
+using FormsApplication.Records;
+using FormsApplication.Checklist;
 
-namespace FormsApplication
+namespace FormsApplication.XMLSerializer
 {
     /// <summary>
-    ///  This class contains helper methods for saving data to XML file and reading data
+    ///  This class contains methods for saving data to XML file and reading data
     ///  from the XML file.
     /// </summary>
     public class XML

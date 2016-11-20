@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FormsApplication
+namespace FormsApplication.Records
 {
     /**
      *  RecordStack is a collection of Records.
