@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FormsApplication
+namespace FormsApplication.Checklist
 {
     /// <summary>
     ///  This class contains name of a checlist and the contents of the checklist

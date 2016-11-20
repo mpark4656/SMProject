@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FormsApplication
+namespace FormsApplication.Records
 {
     /**
      *  Record stores all the contents of an interaction ticket

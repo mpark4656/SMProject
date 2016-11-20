@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using FormsApplication.Checklist;
+using FormsApplication.Records;
+using FormsApplication.XMLSerializer;
 
 namespace FormsApplication
 {
