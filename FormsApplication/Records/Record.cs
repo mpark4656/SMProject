@@ -2,9 +2,9 @@
 
 namespace FormsApplication.Records
 {
-    /**
-     *  Record stores all the contents of an interaction ticket
-     * */
+    /// <summary>
+    ///  Record stores all the contents of an interaction ticket
+    /// </summary>
     public class Record
     {
         private string username;
@@ -16,10 +16,10 @@ namespace FormsApplication.Records
         private string title;
         private string[] description;
 
-        /**
-         *  Default Constructor
-         *  Initialize all variables
-         * */
+        /// <summary>
+        ///  Default Constructor
+        ///  Initialize all variables
+        /// </summary>
         public Record()
         {
             Username = "";
@@ -31,10 +31,10 @@ namespace FormsApplication.Records
             Title = "";
             description = null;
         }
-        
-        /**
-         *  Constructor that accepts contents of text fields
-         * */
+
+        /// <summary>
+        ///  Constructor that accepts contents of text fields
+        /// </summary>
         public Record(string username, 
                       string classification,
                       string interaction ,
@@ -54,72 +54,72 @@ namespace FormsApplication.Records
             Description = desc;
         }
 
-        /**
-         *  Getter and Setter for username
-         * */
+        /// <summary>
+        ///  Getter and Setter for username
+        /// </summary>
         public string Username
         {
             get { return username; }
             set { username = value; }
         }
 
-        /**
-         *  Getter and Setter for classification
-         * */
+        /// <summary>
+        ///  Getter and Setter for classification
+        /// </summary>
         public string Classification
         {
             get { return classification; }
             set { classification = value; }
         }
 
-        /**
-         *  Getter and Setter for interaction
-         * */
+        /// <summary>
+        ///  Getter and Setter for interaction
+        /// </summary>
         public string Interaction
         {
             get { return interaction; }
             set { interaction = value; }
         }
 
-        /**
-         *  Getter and Setter for telephone
-         * */
+        /// <summary>
+        ///  Getter and Setter for telephone
+        /// </summary>
         public string Telephone
         {
             get { return telephone; }
             set { telephone = value; }
         }
 
-        /**
-         *  Getter and Setter for asset
-         * */
+        /// <summary>
+        ///  Getter and Setter for asset
+        /// </summary>
         public string Asset
         {
             get { return asset; }
             set { asset = value; }
         }
 
-        /**
-         *  Getter and Setter for machine
-         * */
+        /// <summary>
+        ///  Getter and Setter for machine
+        /// </summary>
         public string Machine
         {
             get { return machine; }
             set { machine = value; }
         }
 
-        /**
-         *  Getter and Setter for title
-         * */
+        /// <summary>
+        ///  Getter and Setter for title
+        /// </summary>
         public string Title
         {
             get { return title; }
             set { title = value; }
         }
 
-        /**
-         *  Getter and Setter for description
-         * */
+        /// <summary>
+        ///  Getter and Setter for description
+        /// </summary>
         public string[] Description
         {
             get { return description; }

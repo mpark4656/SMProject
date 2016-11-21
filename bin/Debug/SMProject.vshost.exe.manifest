@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="SMProject.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="notepad-icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:iconFile="FormsApplication\notepad-icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="SMProject" version="4.0.0.1" language="neutral" processorArchitecture="msil" />
@@ -43,18 +43,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMProject.exe" size="783824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMProject.exe" size="784336">
       <assemblyIdentity name="SMProject" version="4.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fm7htXcY07IdXFKbW5lOeYySs/YrYbKR8aFXiTL2mDU=</dsig:DigestValue>
+        <dsig:DigestValue>lZ5FSOfY6XH006IKqXIC3Vou83Lz9SFH8Ziuf3YfxBg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="notepad-icon.ico" size="370070">
+  <file name="FormsApplication\notepad-icon.ico" size="370070">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />

@@ -39,18 +39,18 @@ namespace FormsApplication
             InitializeComponent();
         }
 
-        /**********************************************************************************************
-         * This section contains methods that deal with the following event actions
-         * 1. Copy Button
-         * 2. Clear Button
-         * 3. Send All to Clipboard Button
-         * 4. Format Phone Number Button
-         * 5. Ping Button
-         * 6. MSRA Button
-         * 7. RDC Button
-         * 8. UNC Button
-         * 9. Add Title Tag
-         * *******************************************************************************************/
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// This section contains methods that deal with the following event actions
+        /// 1. Copy Button
+        /// 2. Clear Button
+        /// 3. Send All to Clipboard Button
+        /// 4. Format Phone Number Button
+        /// 5. Ping Button
+        /// 6. MSRA Button
+        /// 7. RDC Button
+        /// 8. UNC Button
+        /// 9. Add Title Tag
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /**
          *  User clicks Copy button next to username text field.
@@ -542,19 +542,19 @@ namespace FormsApplication
             }
         }
 
-        /**********************************************************************************************
-         * This section contains methods that are called while user navigates to a different record
-         * (Such as clicking Prev or Next button or specifying the Record# to view in the index field),
-         * creates a new record, or deletes a new record. 
-         * 1. load
-         * 2. save
-         * 3. New Button
-         * 4. Delete Button
-         * 5. Previous Button
-         * 6. Next Button
-         * 7. Go Button
-         * 8. Index TextBox
-         * *******************************************************************************************/
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+        /// This section contains methods that are called while user navigates to a different record
+        /// (Such as clicking Prev or Next button or specifying the Record# to view in the index field),
+        /// creates a new record, or deletes a new record. 
+        /// 1. load
+        /// 2. save
+        /// 3. New Button
+        /// 4. Delete Button
+        /// 5. Previous Button
+        /// 6. Next Button
+        /// 7. Go Button
+        /// 8. Index TextBox
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
 
         /**
          *  This method displays the specified record
@@ -789,6 +789,28 @@ namespace FormsApplication
             }
         }
 
+        /// <summary>
+        ///  Index Box gains focus.
+        ///  Select all contents in the Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void indexBox_Enter(object sender, EventArgs e)
+        {
+            indexBox.SelectAll();
+        }
+
+        /// <summary>
+        ///  Index Box is clicked by user
+        ///  Select all contents in the Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void indexBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            indexBox.SelectAll();
+        }
+
         /**
          * User hits Enter key while the index box has focus. Load and display the record
          * specified by the value in the Index box.
@@ -806,20 +828,20 @@ namespace FormsApplication
             }
         }
 
-        /**********************************************************************************************
-         * This section has methods define event actions for when the MainForm first opens and when the
-         * MainForm is closing.
-         * 1. MainForm Loads
-         * 2. MainForm Closing
-         * *******************************************************************************************/
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// This section has methods define event actions for when the MainForm first opens and when the
+        /// MainForm is closing.
+        /// 1. MainForm Loads
+        /// 2. MainForm Closing
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        /**
-         *  This method performs necessary actions to retrieve data from xml file when the Form 
-         *   application opens
-         *  If "FormData.xml" file exists in the same directory as the .exe file, then it will try to
-         *   read the file.
-         *  If the file does not exist, then form will simply add a blank record.
-         * */
+        /// <summary>
+        ///  This method performs necessary actions to retrieve data from xml file when the Form 
+        ///  application opens
+        ///  If "FormData.xml" file exists in the same directory as the.exe file, then it will try to
+        ///  read the file.
+        ///  If the file does not exist, then form will simply add a blank record.
+        /// </summary>
         private void mainWindow_Load(object sender, EventArgs e)
         {
             // If FormData.xml exists in the current directory, try to read data from it
@@ -856,10 +878,10 @@ namespace FormsApplication
             }
         }
 
-        /**
-         *  While the form is being closed (User clicked Close button), save the current record
-         *   and then save all data in RecordStack interactions to .xml file
-         * */
+        /// <summary>
+        ///  While the form is being closed (User clicked Close button), save the current record
+        ///  and then save all data in RecordStack interactions to.xml file
+        /// </summary>
         private void mainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             // makeNewConnection.cmd file is created if user attempts to make UNC connections.

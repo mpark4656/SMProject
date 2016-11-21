@@ -375,7 +375,9 @@
             this.indexBox.TabIndex = 29;
             this.indexBox.Text = "1";
             this.GoToTip.SetToolTip(this.indexBox, "Enter the Record #");
+            this.indexBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.indexBox_MouseClick);
             this.indexBox.TextChanged += new System.EventHandler(this.indexBox_TextChanged);
+            this.indexBox.Enter += new System.EventHandler(this.indexBox_Enter);
             this.indexBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.indexBox_KeyDown);
             // 
             // usernameField
