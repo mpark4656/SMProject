@@ -61,7 +61,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>notepad-icon.ico</ApplicationIcon>
+    <ApplicationIcon>FormsApplication\notepad-icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,48 +77,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCheckListForm.cs">
+    <Compile Include="FormsApplication\AddCheckListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddCheckListForm.Designer.cs">
+    <Compile Include="FormsApplication\AddCheckListForm.Designer.cs">
       <DependentUpon>AddCheckListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckListForm.cs">
+    <Compile Include="FormsApplication\CheckListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckListForm.Designer.cs">
+    <Compile Include="FormsApplication\CheckListForm.Designer.cs">
       <DependentUpon>CheckListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Checklist\CheckList.cs" />
-    <Compile Include="Checklist\CheckListStack.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="FormsApplication\Checklist\CheckList.cs" />
+    <Compile Include="FormsApplication\Checklist\CheckListStack.cs" />
+    <Compile Include="FormsApplication\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="FormsApplication\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="FormsApplication\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Records\Record.cs" />
-    <Compile Include="Records\RecordStack.cs" />
-    <Compile Include="XMLSerializer\XML.cs" />
-    <EmbeddedResource Include="AddCheckListForm.resx">
+    <Compile Include="FormsApplication\Records\Record.cs" />
+    <Compile Include="FormsApplication\Records\RecordStack.cs" />
+    <Compile Include="FormsApplication\XMLSerializer\XML.cs" />
+    <EmbeddedResource Include="FormsApplication\AddCheckListForm.resx">
       <DependentUpon>AddCheckListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckListForm.resx">
+    <EmbeddedResource Include="FormsApplication\CheckListForm.resx">
       <DependentUpon>CheckListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="FormsApplication\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
+    <None Include="FormsApplication\App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -139,7 +139,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="notepad-icon.ico" />
+    <Content Include="FormsApplication\notepad-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
