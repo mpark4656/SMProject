@@ -19,6 +19,9 @@ namespace FormsApplication
         public AddCheckListForm()
         {
             InitializeComponent();
+
+            // This form window opens at the center of the parent form
+            StartPosition = FormStartPosition.CenterParent;
         }
 
         /// <summary>
