@@ -30,6 +30,10 @@ namespace FormsApplication
         public CheckListForm()
         {
             InitializeComponent();
+
+            // This form window opens at the center of the parent form
+            StartPosition = FormStartPosition.CenterParent;
+
             LoadCheckList();
 
             // Initialize the static variables

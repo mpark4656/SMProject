@@ -40,6 +40,7 @@
             this.MoveDownButton = new System.Windows.Forms.Button();
             this.InsertTip = new System.Windows.Forms.ToolTip(this.components);
             this.SendToClipboardTip = new System.Windows.Forms.ToolTip(this.components);
+            this.InstructionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // InsertButton
@@ -84,9 +85,9 @@
             this.CheckListSelectionBox.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckListSelectionBox.FormattingEnabled = true;
             this.CheckListSelectionBox.ItemHeight = 17;
-            this.CheckListSelectionBox.Location = new System.Drawing.Point(23, 18);
+            this.CheckListSelectionBox.Location = new System.Drawing.Point(23, 35);
             this.CheckListSelectionBox.Name = "CheckListSelectionBox";
-            this.CheckListSelectionBox.Size = new System.Drawing.Size(262, 565);
+            this.CheckListSelectionBox.Size = new System.Drawing.Size(262, 548);
             this.CheckListSelectionBox.TabIndex = 6;
             this.CheckListSelectionBox.DoubleClick += new System.EventHandler(this.CheckListSelectionBox_DoubleClick);
             // 
@@ -154,11 +155,21 @@
             // 
             this.SendToClipboardTip.ToolTipTitle = "Send the Contents to the Clipboard";
             // 
+            // InstructionLabel
+            // 
+            this.InstructionLabel.AutoSize = true;
+            this.InstructionLabel.Location = new System.Drawing.Point(21, 16);
+            this.InstructionLabel.Name = "InstructionLabel";
+            this.InstructionLabel.Size = new System.Drawing.Size(143, 13);
+            this.InstructionLabel.TabIndex = 12;
+            this.InstructionLabel.Text = "Double-click an item to insert";
+            // 
             // CheckListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 638);
+            this.Controls.Add(this.InstructionLabel);
             this.Controls.Add(this.MoveDownButton);
             this.Controls.Add(this.MoveUpButton);
             this.Controls.Add(this.CloseButton);
@@ -173,6 +184,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckListForm_FormClosing);
             this.Load += new System.EventHandler(this.CheckListForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -188,5 +200,6 @@
         private System.Windows.Forms.Button MoveDownButton;
         private System.Windows.Forms.ToolTip InsertTip;
         private System.Windows.Forms.ToolTip SendToClipboardTip;
+        private System.Windows.Forms.Label InstructionLabel;
     }
 }
