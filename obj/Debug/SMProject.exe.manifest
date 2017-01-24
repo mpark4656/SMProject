@@ -4,7 +4,7 @@
   <description asmv2:iconFile="FormsApplication\notepad-icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="SMProject" version="4.0.0.2" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="SMProject" version="4.0.0.1" language="neutral" processorArchitecture="msil" />
     <commandLine file="SMProject.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMProject.exe" size="784336">
-      <assemblyIdentity name="SMProject" version="4.0.0.2" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="SMProject" version="4.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8s1TfO83IeR6PwhsBUHxjp7hPH5P9hjCCRlic3nedf4=</dsig:DigestValue>
+        <dsig:DigestValue>lZ5FSOfY6XH006IKqXIC3Vou83Lz9SFH8Ziuf3YfxBg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
